@@ -18,6 +18,7 @@
 		45CF809926259C60007AE717 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45CF809726259C60007AE717 /* LaunchScreen.storyboard */; };
 		45CF80A426259C61007AE717 /* Media_final_projectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF80A326259C61007AE717 /* Media_final_projectTests.swift */; };
 		45CF80AF26259C61007AE717 /* Media_final_projectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF80AE26259C61007AE717 /* Media_final_projectUITests.swift */; };
+		45DC5C41262C5FC80096B04A /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC5C40262C5FC80096B04A /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		45CF80AA26259C61007AE717 /* Media_final_projectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Media_final_projectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45CF80AE26259C61007AE717 /* Media_final_projectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media_final_projectUITests.swift; sourceTree = "<group>"; };
 		45CF80B026259C61007AE717 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45DC5C40262C5FC80096B04A /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,9 +109,8 @@
 			children = (
 				45CF808926259C5F007AE717 /* AppDelegate.swift */,
 				45CF808B26259C5F007AE717 /* SceneDelegate.swift */,
-				45CF808D26259C5F007AE717 /* LoginPageViewController.swift */,
-				450FF5E2262C3FDC000F1AA2 /* SignInPageViewController.swift */,
-				450FF5E4262C3FF2000F1AA2 /* SignUpPageViewController.swift */,
+				45DC5C3F262C5F950096B04A /* Core Data Manager */,
+				45DC5C3E262C5F710096B04A /* View controllers */,
 				45CF808F26259C5F007AE717 /* Main.storyboard */,
 				45CF809526259C60007AE717 /* Assets.xcassets */,
 				45CF809726259C60007AE717 /* LaunchScreen.storyboard */,
@@ -135,6 +136,24 @@
 				45CF80B026259C61007AE717 /* Info.plist */,
 			);
 			path = Media_final_projectUITests;
+			sourceTree = "<group>";
+		};
+		45DC5C3E262C5F710096B04A /* View controllers */ = {
+			isa = PBXGroup;
+			children = (
+				45CF808D26259C5F007AE717 /* LoginPageViewController.swift */,
+				450FF5E2262C3FDC000F1AA2 /* SignInPageViewController.swift */,
+				450FF5E4262C3FF2000F1AA2 /* SignUpPageViewController.swift */,
+			);
+			path = "View controllers";
+			sourceTree = "<group>";
+		};
+		45DC5C3F262C5F950096B04A /* Core Data Manager */ = {
+			isa = PBXGroup;
+			children = (
+				45DC5C40262C5FC80096B04A /* File.swift */,
+			);
+			path = "Core Data Manager";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +289,7 @@
 			files = (
 				45CF808E26259C5F007AE717 /* LoginPageViewController.swift in Sources */,
 				45CF808A26259C5F007AE717 /* AppDelegate.swift in Sources */,
+				45DC5C41262C5FC80096B04A /* File.swift in Sources */,
 				45CF809426259C60007AE717 /* Media_final_project.xcdatamodeld in Sources */,
 				450FF5E5262C3FF2000F1AA2 /* SignUpPageViewController.swift in Sources */,
 				45CF808C26259C5F007AE717 /* SceneDelegate.swift in Sources */,
