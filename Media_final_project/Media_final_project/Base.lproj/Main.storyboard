@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login Page View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Media_final_project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginPageViewController" id="BYZ-38-t0r" customClass="LoginPageViewController" customModule="Media_final_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,6 +29,9 @@
                                 <state key="normal" title="Sign In">
                                     <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="SignInButtonNavTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="lbU-4e-yxW"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hu5-92-1w8">
                                 <rect key="frame" x="45" y="691" width="325" height="30"/>
@@ -37,21 +40,28 @@
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="SignUpButtonNavTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oan-8Y-h7C"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="YJI-V9-p61"/>
+                    <connections>
+                        <outlet property="SignUpPage" destination="hu5-92-1w8" id="emb-RJ-tkc"/>
+                        <outlet property="SigninPage" destination="8r2-3I-Ox5" id="PJf-Ky-gz4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="97.767857142857139"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up Page View Controller-->
         <scene sceneID="vzo-id-8If">
             <objects>
-                <viewController id="9OO-XL-47t" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpPageViewController" id="9OO-XL-47t" customClass="SignUpPageViewController" customModule="Media_final_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xwm-64-5gC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -99,7 +109,7 @@
                                 <rect key="frame" x="20" y="436" width="236" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9V-5h-CyK">
                                 <rect key="frame" x="20" y="407" width="74" height="21"/>
@@ -121,19 +131,45 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9N3-Vx-bPS">
+                                <rect key="frame" x="330" y="585" width="54" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="SignUpButtonSaveTapped" destination="9OO-XL-47t" eventType="touchUpInside" id="yK0-7e-DUD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MdY-on-FjO">
+                                <rect key="frame" x="20" y="585" width="50" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Google"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ggp-yF-wIw">
+                                <rect key="frame" x="83" y="585" width="67" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Facebook"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="dyA-AJ-UXF"/>
                     </view>
+                    <connections>
+                        <outlet property="dOBTextfield" destination="sIC-ib-z0s" id="cr3-hT-IPa"/>
+                        <outlet property="firstNameTextfield" destination="wv9-Sm-9Ef" id="ad6-Tz-mwR"/>
+                        <outlet property="lastNameTextfield" destination="bS6-Xp-rM0" id="jkD-79-RcQ"/>
+                        <outlet property="passwordTextfield" destination="Qeu-tw-ZPe" id="6PN-mH-LpV"/>
+                        <outlet property="signUpButton" destination="9N3-Vx-bPS" id="qxB-dd-qe0"/>
+                        <outlet property="userNameTextfield" destination="SUi-xC-9fe" id="jCg-xo-lWM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eax-CI-jPE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2116" y="374"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign In Page View Controller-->
         <scene sceneID="hdx-DS-pCM">
             <objects>
-                <viewController id="QiO-ig-Jza" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInPageViewController" id="QiO-ig-Jza" customClass="SignInPageViewController" customModule="Media_final_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IpA-OA-cCv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
