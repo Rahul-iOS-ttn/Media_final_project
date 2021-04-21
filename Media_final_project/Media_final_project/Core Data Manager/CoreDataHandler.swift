@@ -8,9 +8,9 @@
 
 import CoreData
 
-struct  CoreDataManager {
+struct  CoreDataHandler {
     
-    static let shared = CoreDataManager()
+    static let shared = CoreDataHandler()
     
     let persistentContainer: NSPersistentContainer = {
         
