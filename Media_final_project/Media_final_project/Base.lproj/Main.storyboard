@@ -269,7 +269,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" image="house.fill" catalog="system" selectedImage="house.fill" id="NML-RU-VQV"/>
                     <connections>
-                        <outlet property="mainScreenTableView" destination="72F-Ut-hgC" id="ZaC-6F-LlZ"/>
+                        <outlet property="mainScreenTableView" destination="72F-Ut-hgC" id="Jt0-OA-n2B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ATX-w7-3I0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

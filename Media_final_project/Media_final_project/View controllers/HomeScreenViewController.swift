@@ -35,24 +35,33 @@ class Component: UIImageView {
     }
 }
 
-class HomeScreenViewController: UIViewController {
+class HomeScreenViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var mainScreenTableView: UITableView!
+    
+    var api = API_integrations()
+    lazy var information = [movieData]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        mainScreenTableView.register(TableViewCell.nib(), forCellReuseIdentifier: TableViewCell.identifier)
+        mainScreenTableView.delegate = self
+        mainScreenTableView.dataSource = self
         // Do any additional setup after loading the view.
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return information.count
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = mainScreenTableView.dequeueReusableCell(withIdentifier: TableViewCell.identifier, for: indexPath) as! TableViewCell
+        cell.configure(with: information, pos: indexPath.row)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200.0
+    }
 }

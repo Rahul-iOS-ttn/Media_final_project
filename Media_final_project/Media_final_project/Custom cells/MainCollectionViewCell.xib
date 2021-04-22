@@ -29,6 +29,9 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="110" height="144"/>
+            <connections>
+                <outlet property="poster" destination="vFV-T1-ETg" id="pN5-dw-rKL"/>
+            </connections>
             <point key="canvasLocation" x="181.15942028985509" y="119.86607142857142"/>
         </collectionViewCell>
     </objects>

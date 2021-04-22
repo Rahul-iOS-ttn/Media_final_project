@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		450FF5E3262C3FDC000F1AA2 /* SignInPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450FF5E2262C3FDC000F1AA2 /* SignInPageViewController.swift */; };
 		450FF5E5262C3FF2000F1AA2 /* SignUpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450FF5E4262C3FF2000F1AA2 /* SignUpPageViewController.swift */; };
+		4570820C2631574F0053CE31 /* API_integrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4570820B2631574F0053CE31 /* API_integrations.swift */; };
 		45CF808A26259C5F007AE717 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF808926259C5F007AE717 /* AppDelegate.swift */; };
 		45CF808C26259C5F007AE717 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF808B26259C5F007AE717 /* SceneDelegate.swift */; };
 		45CF808E26259C5F007AE717 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF808D26259C5F007AE717 /* LoginPageViewController.swift */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		450FF5E2262C3FDC000F1AA2 /* SignInPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPageViewController.swift; sourceTree = "<group>"; };
 		450FF5E4262C3FF2000F1AA2 /* SignUpPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPageViewController.swift; sourceTree = "<group>"; };
+		4570820B2631574F0053CE31 /* API_integrations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_integrations.swift; sourceTree = "<group>"; };
 		45CF808626259C5F007AE717 /* Media_final_project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Media_final_project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45CF808926259C5F007AE717 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45CF808B26259C5F007AE717 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,7 +122,7 @@
 				45CF808926259C5F007AE717 /* AppDelegate.swift */,
 				45CF808B26259C5F007AE717 /* SceneDelegate.swift */,
 				45F3CD1126306AA200DDDDC7 /* Custom cells */,
-				45DC5C3F262C5F950096B04A /* Core Data Manager */,
+				45DC5C3F262C5F950096B04A /* Utilities */,
 				45DC5C3E262C5F710096B04A /* View controllers */,
 				45CF808F26259C5F007AE717 /* Main.storyboard */,
 				45CF809526259C60007AE717 /* Assets.xcassets */,
@@ -160,12 +162,13 @@
 			path = "View controllers";
 			sourceTree = "<group>";
 		};
-		45DC5C3F262C5F950096B04A /* Core Data Manager */ = {
+		45DC5C3F262C5F950096B04A /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				45DC5C40262C5FC80096B04A /* CoreDataHandler.swift */,
+				4570820B2631574F0053CE31 /* API_integrations.swift */,
 			);
-			path = "Core Data Manager";
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		45F3CD1126306AA200DDDDC7 /* Custom cells */ = {
@@ -321,6 +324,7 @@
 				450FF5E5262C3FF2000F1AA2 /* SignUpPageViewController.swift in Sources */,
 				45F3CD1826306B7600DDDDC7 /* MainCollectionViewCell.swift in Sources */,
 				45CF808C26259C5F007AE717 /* SceneDelegate.swift in Sources */,
+				4570820C2631574F0053CE31 /* API_integrations.swift in Sources */,
 				450FF5E3262C3FDC000F1AA2 /* SignInPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
