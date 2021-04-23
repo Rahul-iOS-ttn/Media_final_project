@@ -39,7 +39,9 @@ class HomeScreenViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var mainScreenTableView: UITableView!
     
     var api = API_integrations()
-    lazy var information = [movieData]()
+    var information = [movieData](){
+        didSet{mainScreenTableView.reloadData()}
+    }
     
     
     override func viewDidLoad() {
@@ -49,15 +51,20 @@ class HomeScreenViewController: UIViewController, UITableViewDataSource, UITable
         mainScreenTableView.dataSource = self
         // Do any additional setup after loading the view.
         
+        information = api.downloadJSON {}//here is nothing
+        debugPrint(api.information[0])
+        debugPrint(information[0])
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return information.count
+        //return information.count //here return the number of cells you are making 1-popular, 2-best dramas, 3 - kids movies, 4-best dramas, 5 - best rated movies rated R
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = mainScreenTableView.dequeueReusableCell(withIdentifier: TableViewCell.identifier, for: indexPath) as! TableViewCell
-        cell.configure(with: information, pos: indexPath.row)
+        cell.configure(with: information, pos: indexPath.row)// manual index of genre that you will make
         return cell
     }
     

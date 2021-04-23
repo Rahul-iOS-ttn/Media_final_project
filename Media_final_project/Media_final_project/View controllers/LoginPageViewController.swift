@@ -19,12 +19,12 @@ class LoginPageViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func SignInButtonNavTapped() {
+    @IBAction func SignInButtonNavTapped(_ sender: Any) {
         let SignInPage = storyboard?.instantiateViewController(withIdentifier: "SignInPageViewController") as! SignInPageViewController
         navigationController?.pushViewController(SignInPage, animated: true)
     }
     
-    @IBAction func SignUpButtonNavTapped() {
+    @IBAction func SignUpButtonNavTapped(_ sender: Any) {
         let SignUpPage = storyboard?.instantiateViewController(withIdentifier: "SignUpPageViewController") as! SignUpPageViewController
         navigationController?.pushViewController(SignUpPage, animated: true)
     }

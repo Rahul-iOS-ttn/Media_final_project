@@ -25,6 +25,8 @@ class SignUpPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+//        loadData()
         // Do any additional setup after loading the view.
     }
     

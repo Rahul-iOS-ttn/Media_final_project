@@ -22,6 +22,8 @@ class TableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionView
         return UINib(nibName: "TableViewCell", bundle: nil)
     }
     
+    var api = API_integrations()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -30,12 +32,14 @@ class TableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionView
                 
                 genreCollectionView.delegate = self
                 genreCollectionView.dataSource = self
+
+        
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
           return information.count
       }
       
-    func configure(with information : [movieData],pos:Int){
+    func configure(with information : [movieData],pos:Int){ //change this finction to take an array of strings which displays genres
         self.information = information
         genreLabel.text = String(pos)
         genreCollectionView.reloadData()

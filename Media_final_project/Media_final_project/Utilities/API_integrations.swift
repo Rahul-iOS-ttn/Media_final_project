@@ -73,7 +73,7 @@ class API_integrations {
     
     lazy var information = [movieData]()
     
-    func downloadJSON(completed: @escaping () -> ()) {
+    func downloadJSON(completed: @escaping () -> Void) -> [movieData] {//return an array of movieData objects after parsing JSON
         
         
         let homeURL: String = "https://api.themoviedb.org/3/"
@@ -93,8 +93,12 @@ class API_integrations {
             if error == nil {
                 do {
                     self.information = try JSONDecoder().decode([movieData].self, from: data!)
+                    
+                    
                     DispatchQueue.main.async {
+                        print(self.information[0].id)
                         completed()
+//                        return the data parsed in jason
                     }
                     
                 }catch {
@@ -102,5 +106,6 @@ class API_integrations {
                 }
             }
         }.resume()
+        return information
     }
 }

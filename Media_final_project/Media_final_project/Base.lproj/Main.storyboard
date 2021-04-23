@@ -10,7 +10,7 @@
         <!--Login Page View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="LoginPageViewController" id="BYZ-38-t0r" customClass="LoginPageViewController" customModule="Media_final_project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginPageViewController" customModule="Media_final_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,7 +30,7 @@
                                     <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="SignInButtonNavTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="lbU-4e-yxW"/>
+                                    <action selector="SignInButtonNavTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VlL-ec-bSR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hu5-92-1w8">
@@ -41,7 +41,7 @@
                                     <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="SignUpButtonNavTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oan-8Y-h7C"/>
+                                    <action selector="SignUpButtonNavTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UGs-gY-Z1P"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -50,8 +50,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="YJI-V9-p61"/>
                     <connections>
-                        <outlet property="SignUpPage" destination="hu5-92-1w8" id="emb-RJ-tkc"/>
-                        <outlet property="SigninPage" destination="8r2-3I-Ox5" id="PJf-Ky-gz4"/>
+                        <outlet property="SignUpPage" destination="hu5-92-1w8" id="ZKy-el-8In"/>
+                        <outlet property="SigninPage" destination="8r2-3I-Ox5" id="sWU-X7-8xv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -279,7 +279,7 @@
         <!--Navigation Controller-->
         <scene sceneID="7W7-cV-N6F">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Cqz-jd-K09" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginPageViewController" automaticallyAdjustsScrollViewInsets="NO" id="Cqz-jd-K09" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KtC-T3-XS7">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
