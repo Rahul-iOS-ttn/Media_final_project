@@ -39,9 +39,9 @@ class TableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionView
           return information.count
       }
       
-    func configure(with information : [movieData],pos:Int){ //change this finction to take an array of strings which displays genres
+    func configure(with information : [movieData],genreName: String){ //change this finction to take an array of strings which displays genres
         self.information = information
-        genreLabel.text = String(pos)
+        genreLabel.text = genreName
         genreCollectionView.reloadData()
     }
     

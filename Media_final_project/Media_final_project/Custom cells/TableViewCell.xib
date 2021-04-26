@@ -16,18 +16,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="473" height="238"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSp-kp-g4U">
-                        <rect key="frame" x="0.0" y="0.0" width="473" height="24"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="473" id="Kgy-F0-zf2"/>
-                            <constraint firstAttribute="height" constant="24" id="glM-if-Dma"/>
-                        </constraints>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSp-kp-g4U">
+                        <rect key="frame" x="0.0" y="0.0" width="473" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="rQK-ac-dOx">
-                        <rect key="frame" x="0.0" y="32" width="473" height="206"/>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="rQK-ac-dOx">
+                        <rect key="frame" x="0.0" y="30.5" width="473" height="207.5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kvz-e1-fdb">
                             <size key="itemSize" width="128" height="128"/>
@@ -38,12 +34,13 @@
                     </collectionView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottomMargin" secondItem="rQK-ac-dOx" secondAttribute="bottom" constant="-45" id="6uC-jT-7A9"/>
-                    <constraint firstItem="eSp-kp-g4U" firstAttribute="leading" secondItem="rQK-ac-dOx" secondAttribute="leading" id="Y5c-ZC-Lun"/>
-                    <constraint firstItem="rQK-ac-dOx" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Ykm-b2-Po9"/>
-                    <constraint firstItem="eSp-kp-g4U" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-55" id="cBW-ue-ViT"/>
-                    <constraint firstItem="eSp-kp-g4U" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-20" id="eg1-4V-spb"/>
-                    <constraint firstItem="rQK-ac-dOx" firstAttribute="top" secondItem="eSp-kp-g4U" secondAttribute="bottom" constant="8" id="iqi-1X-bRD"/>
+                    <constraint firstItem="eSp-kp-g4U" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="3m0-Ux-Dn5"/>
+                    <constraint firstItem="rQK-ac-dOx" firstAttribute="top" secondItem="eSp-kp-g4U" secondAttribute="bottom" constant="10" id="ExQ-hT-ug2"/>
+                    <constraint firstItem="eSp-kp-g4U" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Z73-3K-g19"/>
+                    <constraint firstAttribute="bottom" secondItem="rQK-ac-dOx" secondAttribute="bottom" id="a6L-Cb-OE9"/>
+                    <constraint firstAttribute="trailing" secondItem="eSp-kp-g4U" secondAttribute="trailing" id="j9W-IN-hoQ"/>
+                    <constraint firstItem="rQK-ac-dOx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="olQ-6l-j1X"/>
+                    <constraint firstAttribute="trailing" secondItem="rQK-ac-dOx" secondAttribute="trailing" id="sF5-dG-IBh"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

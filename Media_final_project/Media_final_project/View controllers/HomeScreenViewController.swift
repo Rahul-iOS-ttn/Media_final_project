@@ -9,9 +9,9 @@
 import UIKit
 
 class Component: UIImageView {
-
+    
     let label = UILabel(frame: .zero)
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(label)
@@ -23,13 +23,13 @@ class Component: UIImageView {
             label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.0),
             label.topAnchor.constraint(equalTo: topAnchor),
             label.bottomAnchor.constraint(equalTo: bottomAnchor),
-            ])
+        ])
     }
-
+    
     func configure(text: String) {
         label.text = text
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -38,11 +38,13 @@ class Component: UIImageView {
 class HomeScreenViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var mainScreenTableView: UITableView!
     
-    var api = API_integrations()
-    var information = [movieData](){
-        didSet{mainScreenTableView.reloadData()}
-    }
+    let genre: [String] = ["Popular","Best Dramas","Kids Movies", "Best Movies"]
     
+    var api = API_integrations()
+//    var information = [movieData](){
+//        didSet{mainScreenTableView.reloadData()}
+//    }
+    var information = [movieData]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,20 +53,29 @@ class HomeScreenViewController: UIViewController, UITableViewDataSource, UITable
         mainScreenTableView.dataSource = self
         // Do any additional setup after loading the view.
         
-        information = api.downloadJSON {}//here is nothing
-        debugPrint(api.information[0])
-        debugPrint(information[0])
+        //        information =
+        api.downloadJSON { information in
+            self.information = information
+//            print(self.api.information[0])
+//            print(self.information[0])
+            
+            self.mainScreenTableView.reloadData()
+            
+            
+        }//here is nothing
+        
         
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //return information.count //here return the number of cells you are making 1-popular, 2-best dramas, 3 - kids movies, 4-best dramas, 5 - best rated movies rated R
-        return 3
+        //        return genre.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = mainScreenTableView.dequeueReusableCell(withIdentifier: TableViewCell.identifier, for: indexPath) as! TableViewCell
-        cell.configure(with: information, pos: indexPath.row)// manual index of genre that you will make
+        cell.configure(with: information, genreName: genre[indexPath.row])// manual index of genre that you will make
         return cell
     }
     

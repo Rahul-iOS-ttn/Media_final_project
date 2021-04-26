@@ -21,30 +21,16 @@ class SignUpPageViewController: UIViewController {
     
     @IBOutlet weak var signUpButton: UIButton!
 
-
+    var userData = [User?]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-//        loadData()
         // Do any additional setup after loading the view.
     }
     
     @IBAction func SignUpButtonSaveTapped () {
-        let userItem = User(context: managedObjectContext)
         
-        userItem.firstname = firstNameTextfield!.text
-        userItem.lastname = lastNameTextfield!.text
-        userItem.username = userNameTextfield!.text
-        userItem.password = passwordTextfield!.text
-        //add DOB part when Date Picker is available
-        
-        do {
-            try self .managedObjectContext.save()
-//            self.loadData()
-        }catch {
-            print("Could not save data \(error.localizedDescription)")
-        }
+        userData = [CoreDataHandler.shared.createUserDetails(firstName: firstNameTextfield!.text ?? "", lastName: lastNameTextfield!.text ?? "", username: userNameTextfield!.text ?? "", password: passwordTextfield!.text ?? "")]
     }
 
 }

@@ -250,6 +250,27 @@
             </objects>
             <point key="canvasLocation" x="5641" y="-810"/>
         </scene>
+        <!--Detail Screen View Controller-->
+        <scene sceneID="TZF-gh-7fi">
+            <objects>
+                <viewController storyboardIdentifier="DetailScreenViewController" id="DsK-D7-u3V" customClass="DetailScreenViewController" customModule="Media_final_project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M6Q-aU-ONH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HGR-uA-8hW">
+                                <rect key="frame" x="0.0" y="44" width="414" height="325"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="rkY-lj-vuJ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JZK-ry-ZQk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3169.5652173913045" y="-1512.0535714285713"/>
+        </scene>
         <!--Item-->
         <scene sceneID="46e-7u-yDA">
             <objects>
@@ -338,6 +359,16 @@
                     <view key="view" contentMode="scaleToFill" id="v6t-XV-ol7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="stg-Ud-ZiK">
+                                <rect key="frame" x="0.0" y="44" width="414" height="262"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DDJ-ef-yRm">
+                                <rect key="frame" x="123" y="240" width="167" height="139"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="gLT-95-GUw"/>
                     </view>
@@ -345,7 +376,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W15-dn-1iR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5641" y="1219"/>
+            <point key="canvasLocation" x="5640.579710144928" y="1218.75"/>
         </scene>
     </scenes>
     <resources>

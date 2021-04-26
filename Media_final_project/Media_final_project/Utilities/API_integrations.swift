@@ -29,6 +29,13 @@ import UIKit
 //"vote_average":7.5,
 //"vote_count":8984
 
+struct MainData : Decodable {
+    var page:Int
+    var results: [movieData]
+    var total_pages: Int
+    var total_results: Int
+}
+
 struct movieData : Decodable {
     var adult: Bool
     var backdrop_path: String
@@ -71,9 +78,9 @@ extension UIImageView {
 class API_integrations {
     let imageHomeURL = "https://image.tmdb.org/t/p/w500"
     
-    lazy var information = [movieData]()
+    var information: MainData?
     
-    func downloadJSON(completed: @escaping () -> Void) -> [movieData] {//return an array of movieData objects after parsing JSON
+    func downloadJSON(completed: @escaping ([movieData]) -> Void) {//return an array of movieData objects after parsing JSON
         
         
         let homeURL: String = "https://api.themoviedb.org/3/"
@@ -83,7 +90,8 @@ class API_integrations {
         
         let api_key: String = "&api_key=820016b7116f872f5f27bf56f9fdfb66"
         
-        let finalURL = URL(string: homeURL + popular + api_key)
+        //        let finalURL = URL(string: homeURL + popular + api_key)
+        let finalURL = URL(string: "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=820016b7116f872f5f27bf56f9fdfb66")
         //    let finalURL = homeURL + popular + api_key
         
         
@@ -92,13 +100,13 @@ class API_integrations {
             
             if error == nil {
                 do {
-                    self.information = try JSONDecoder().decode([movieData].self, from: data!)
+                    self.information = try JSONDecoder().decode(MainData.self, from: data!)
                     
                     
                     DispatchQueue.main.async {
-                        print(self.information[0].id)
-                        completed()
-//                        return the data parsed in jason
+//                        print(self.information[0].page)
+                        completed(self.information!.results)
+                        //                        return the data parsed in jason
                     }
                     
                 }catch {
@@ -106,6 +114,5 @@ class API_integrations {
                 }
             }
         }.resume()
-        return information
     }
 }

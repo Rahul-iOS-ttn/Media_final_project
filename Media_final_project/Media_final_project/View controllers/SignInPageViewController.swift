@@ -32,7 +32,10 @@ class SignInPageViewController: UIViewController {
         }
     }
     @IBAction func signInButtonTapped(_ sender: Any) {
-        if userNameTextField.text == "admin" && passwordTextField.text == "admin" {
+        
+        let userTryingtoLogIn = CoreDataHandler.shared.fetchUserDetails(withUserName: userNameTextField!.text ?? "") // if nil found give an alert for user not found - error Handling implement
+        
+        if userTryingtoLogIn?.password == passwordTextField!.text {
             UserDefaults.standard.set(true, forKey: "ISUSERLOGGEDIN")
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
