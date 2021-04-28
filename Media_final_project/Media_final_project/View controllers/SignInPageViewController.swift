@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class SignInPageViewController: UIViewController {
     
@@ -45,6 +46,8 @@ class SignInPageViewController: UIViewController {
             // then call the change root view controller function to change to main tab bar
             (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(MainTabBarController)
             
+        } else {
+            print("error here")
         }
         
     }

@@ -31,6 +31,11 @@ class SignUpPageViewController: UIViewController {
     @IBAction func SignUpButtonSaveTapped () {
         
         userData = [CoreDataHandler.shared.createUserDetails(firstName: firstNameTextfield!.text ?? "", lastName: lastNameTextfield!.text ?? "", username: userNameTextfield!.text ?? "", password: passwordTextfield!.text ?? "")]
+        
+        debugPrint(userData)
+        
+        let SignInPage = storyboard?.instantiateViewController(withIdentifier: "SignInPageViewController") as! SignInPageViewController
+        navigationController?.pushViewController(SignInPage, animated: true)
     }
 
 }

@@ -355,7 +355,7 @@
         <!--Item-->
         <scene sceneID="0mV-k7-p0w">
             <objects>
-                <viewController id="Wjc-uc-bbb" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserScreeViewController" id="Wjc-uc-bbb" customClass="UserScreeViewController" customModule="Media_final_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v6t-XV-ol7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -368,11 +368,22 @@
                                 <rect key="frame" x="123" y="240" width="167" height="139"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQ0-el-20E">
+                                <rect key="frame" x="156" y="536" width="101" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Log out button"/>
+                                <connections>
+                                    <action selector="logoutButtonTapped" destination="Wjc-uc-bbb" eventType="touchUpInside" id="ah4-Bk-DZ3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="gLT-95-GUw"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" image="person.circle.fill" catalog="system" selectedImage="person.circle.fill" id="0i1-hX-ZVj"/>
+                    <connections>
+                        <outlet property="logoutButton" destination="EQ0-el-20E" id="QCz-Mb-lUY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W15-dn-1iR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

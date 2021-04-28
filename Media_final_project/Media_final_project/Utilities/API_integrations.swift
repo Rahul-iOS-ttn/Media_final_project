@@ -80,39 +80,29 @@ class API_integrations {
     
     var information: MainData?
     
-    func downloadJSON(completed: @escaping ([movieData]) -> Void) {//return an array of movieData objects after parsing JSON
-        
-        
+    func downloadJSON(completed: @escaping ([movieData]) -> Void) {
         let homeURL: String = "https://api.themoviedb.org/3/"
-        
         let popular: String = "discover/movie?sort_by=popularity.desc"
         //paths to specific links will be defines with their respective use-cases
-        
         let api_key: String = "&api_key=820016b7116f872f5f27bf56f9fdfb66"
-        
         //        let finalURL = URL(string: homeURL + popular + api_key)
         let finalURL = URL(string: "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=820016b7116f872f5f27bf56f9fdfb66")
         //    let finalURL = homeURL + popular + api_key
-        
-        
-        
         URLSession.shared.dataTask(with: finalURL!) { (data, response, error) in
-            
             if error == nil {
                 do {
                     self.information = try JSONDecoder().decode(MainData.self, from: data!)
-                    
-                    
                     DispatchQueue.main.async {
 //                        print(self.information[0].page)
                         completed(self.information!.results)
                         //                        return the data parsed in jason
                     }
-                    
                 }catch {
                     print("JSON NOT FOUND")
                 }
             }
         }.resume()
     }
+    
+    func GenreCategory() {}
 }

@@ -14,7 +14,7 @@ struct  CoreDataHandler {
     
     let persistentContainer: NSPersistentContainer = {
         
-        let container = NSPersistentContainer(name: "Final_Project_App")
+        let container = NSPersistentContainer(name: "Media_final_project")
         container.loadPersistentStores { (storeDescription, error) in
             if let error = error {
                 fatalError("Loading of store failed \(error)")
@@ -64,7 +64,7 @@ struct  CoreDataHandler {
         
         let fetchRequest = NSFetchRequest<User>(entityName: "User")
         fetchRequest.fetchLimit = 1
-        fetchRequest.predicate = NSPredicate(format: "email == %@", username)
+        fetchRequest.predicate = NSPredicate(format: "username == %@", username)
         
         do {
             let details = try context.fetch(fetchRequest)
