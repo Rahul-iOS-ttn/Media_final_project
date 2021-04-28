@@ -16,7 +16,8 @@ class SignInPageViewController: UIViewController {
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
-    
+    @IBOutlet weak var googleButton: UIButton!
+    @IBOutlet weak var facebookButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()

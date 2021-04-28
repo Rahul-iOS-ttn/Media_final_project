@@ -144,7 +144,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Google"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ggp-yF-wIw">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ggp-yF-wIw" customClass="FBSDKLoginButton">
                                 <rect key="frame" x="83" y="585" width="67" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Facebook"/>
@@ -155,7 +155,9 @@
                     </view>
                     <connections>
                         <outlet property="dOBTextfield" destination="sIC-ib-z0s" id="cr3-hT-IPa"/>
+                        <outlet property="facebookButton" destination="Ggp-yF-wIw" id="Ezi-UG-MDA"/>
                         <outlet property="firstNameTextfield" destination="wv9-Sm-9Ef" id="ad6-Tz-mwR"/>
+                        <outlet property="googleButton" destination="MdY-on-FjO" id="fg9-tx-9wz"/>
                         <outlet property="lastNameTextfield" destination="bS6-Xp-rM0" id="jkD-79-RcQ"/>
                         <outlet property="passwordTextfield" destination="Qeu-tw-ZPe" id="6PN-mH-LpV"/>
                         <outlet property="signUpButton" destination="9N3-Vx-bPS" id="qxB-dd-qe0"/>

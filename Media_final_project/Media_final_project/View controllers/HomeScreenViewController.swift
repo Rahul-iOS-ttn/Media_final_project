@@ -35,16 +35,20 @@ class Component: UIImageView {
     }
 }
 
+
+
+
 class HomeScreenViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var mainScreenTableView: UITableView!
     
     let genre: [String] = ["Popular","Best Dramas","Kids Movies", "Best Movies"]
     
     var api = API_integrations()
-//    var information = [movieData](){
-//        didSet{mainScreenTableView.reloadData()}
-//    }
-    var information = [movieData]()
+    //    var information = [movieData](){
+    //        didSet{mainScreenTableView.reloadData()}
+    //    }
+    var information = [[movieData]]()
+    var instance = [movieData]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,28 +58,41 @@ class HomeScreenViewController: UIViewController, UITableViewDataSource, UITable
         // Do any additional setup after loading the view.
         
         //        information =
-        api.downloadJSON { information in
-            self.information = information
-//            print(self.api.information[0])
-//            print(self.information[0])
-            
-            self.mainScreenTableView.reloadData()
-            
-            
-        }//here is nothing
+        //        api.downloadJSON { information in
+        //            self.information = information
+        //            self.mainScreenTableView.reloadData()
+        //        }
+        self.getInformation(for: genre)
+    }
+    
+    
+    func getInformation(for genres: [String]) {
         
+        let api = API_integrations()
+        
+        for genre in genres {
+            api.DownloadCase(for: genre){ information in
+                self.instance = information
+                self.information.append(self.instance)
+                self.mainScreenTableView.reloadData()
+            }
+        }
         
     }
     
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return information.count //here return the number of cells you are making 1-popular, 2-best dramas, 3 - kids movies, 4-best dramas, 5 - best rated movies rated R
-        //        return genre.count
-        return 1
+        return genre.count
+        //        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = mainScreenTableView.dequeueReusableCell(withIdentifier: TableViewCell.identifier, for: indexPath) as! TableViewCell
-        cell.configure(with: information, genreName: genre[indexPath.row])// manual index of genre that you will make
+        if information.count > 0
+        {cell.configure(with: information[indexPath.row], genreName: genre[indexPath.row])// manual index of genre that you will make
+            
+        }
         return cell
     }
     

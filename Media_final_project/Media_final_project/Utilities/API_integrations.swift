@@ -78,24 +78,21 @@ extension UIImageView {
 class API_integrations {
     let imageHomeURL = "https://image.tmdb.org/t/p/w500"
     
-    var information: MainData?
+    var completeInformation: MainData?
     
-    func downloadJSON(completed: @escaping ([movieData]) -> Void) {
-        let homeURL: String = "https://api.themoviedb.org/3/"
-        let popular: String = "discover/movie?sort_by=popularity.desc"
+    func downloadJSON(finalURL: URL?, completed: @escaping ([movieData]) -> Void) {
+        
+        
         //paths to specific links will be defines with their respective use-cases
-        let api_key: String = "&api_key=820016b7116f872f5f27bf56f9fdfb66"
-        //        let finalURL = URL(string: homeURL + popular + api_key)
-        let finalURL = URL(string: "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=820016b7116f872f5f27bf56f9fdfb66")
+        //        let finalURL = URL(string: "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=820016b7116f872f5f27bf56f9fdfb66")
         //    let finalURL = homeURL + popular + api_key
         URLSession.shared.dataTask(with: finalURL!) { (data, response, error) in
+            print(" akjsdhbf ")
             if error == nil {
                 do {
-                    self.information = try JSONDecoder().decode(MainData.self, from: data!)
+                    self.completeInformation = try JSONDecoder().decode(MainData.self, from: data!)
                     DispatchQueue.main.async {
-//                        print(self.information[0].page)
-                        completed(self.information!.results)
-                        //                        return the data parsed in jason
+                        completed(self.completeInformation!.results)
                     }
                 }catch {
                     print("JSON NOT FOUND")
@@ -104,5 +101,41 @@ class API_integrations {
         }.resume()
     }
     
-    func GenreCategory() {}
+    func DownloadCase(for genreCategory: String, downloadCaseCompleted: @escaping ([movieData]) -> Void) {
+        let homeURL: String = "https://api.themoviedb.org/3/"
+        let api_key: String = "&api_key=820016b7116f872f5f27bf56f9fdfb66"
+        switch genreCategory {
+        case "Popular":
+            let popular: String = "discover/movie?sort_by=popularity.desc"
+            let finalURL = URL(string: homeURL + popular + api_key)
+            //            self.downloadJSON() { information in
+            //                self.information = information
+            //                self.mainScreenTableView.reloadData()
+            //            }
+            self.downloadJSON(finalURL: finalURL) { information in
+                downloadCaseCompleted(information)
+                //proceed function
+            }
+        case "Best Dramas":
+            let bestDramas: String = "discover/movie?with_genres=18&sort_by=vote_average.desc&vote_count.gte=10"
+            let finalURL = URL(string: homeURL + bestDramas + api_key)
+            self.downloadJSON(finalURL: finalURL) { information in
+                downloadCaseCompleted(information)
+            }
+        case "Kids Movies":
+            let kidsMovies: String = "discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc"
+            let finalURL = URL(string: homeURL + kidsMovies + api_key)
+            self.downloadJSON(finalURL: finalURL) { information in
+                downloadCaseCompleted(information)
+            }
+        case "Best Movies":
+            let bestMovies: String = "discover/movie?primary_release_year=2010&sort_by=vote_average.desc"
+            let finalURL = URL(string: homeURL + bestMovies + api_key)
+            self.downloadJSON(finalURL: finalURL) { information in
+                downloadCaseCompleted(information)
+            }
+        default:
+            print("error Somewhere in API integration")
+        }
+    }
 }
