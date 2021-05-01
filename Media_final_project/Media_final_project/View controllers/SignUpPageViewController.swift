@@ -38,7 +38,7 @@ class SignUpPageViewController: UIViewController {
             
             let request = FBSDKLoginKit.GraphRequest(graphPath: "me", parameters: ["fields": "id, email, first_name, last_name, picture, short_name,name, middle_name, name_format, age_range"], tokenString: token, version: nil, httpMethod: .get)
             request.start { (connection, result, error) in
-                print("\(result)")
+                print("\(String(describing: result))")
             }
             UserDefaults.standard.set(true, forKey: "ISUSERLOGGEDIN")
             
@@ -69,7 +69,7 @@ extension SignUpPageViewController: LoginButtonDelegate {
         
         let request = FBSDKLoginKit.GraphRequest(graphPath: "me", parameters: ["fields": "id, email, first_name, last_name, picture, short_name,name, middle_name, name_format, age_range"], tokenString: token, version: nil, httpMethod: .get)
         request.start { (connection, result, error) in
-            print("\(result)")
+            print("\(String(describing: result))")
             
         }
     }

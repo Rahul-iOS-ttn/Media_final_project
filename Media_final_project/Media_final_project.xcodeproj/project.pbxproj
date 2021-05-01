@@ -11,6 +11,7 @@
 		450FF5E5262C3FF2000F1AA2 /* SignUpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450FF5E4262C3FF2000F1AA2 /* SignUpPageViewController.swift */; };
 		4570820C2631574F0053CE31 /* API_integrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4570820B2631574F0053CE31 /* API_integrations.swift */; };
 		4570820E2634284D0053CE31 /* DetailScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4570820D2634284D0053CE31 /* DetailScreenViewController.swift */; };
+		458DA02C2639C2A2003F50BA /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458DA02B2639C2A2003F50BA /* DataModel.swift */; };
 		45BA166D2637F99F00430371 /* UserScreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BA166C2637F99F00430371 /* UserScreeViewController.swift */; };
 		45CF808A26259C5F007AE717 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF808926259C5F007AE717 /* AppDelegate.swift */; };
 		45CF808C26259C5F007AE717 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF808B26259C5F007AE717 /* SceneDelegate.swift */; };
@@ -56,6 +57,7 @@
 		450FF5E4262C3FF2000F1AA2 /* SignUpPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPageViewController.swift; sourceTree = "<group>"; };
 		4570820B2631574F0053CE31 /* API_integrations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_integrations.swift; sourceTree = "<group>"; };
 		4570820D2634284D0053CE31 /* DetailScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenViewController.swift; sourceTree = "<group>"; };
+		458DA02B2639C2A2003F50BA /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		45BA166C2637F99F00430371 /* UserScreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserScreeViewController.swift; sourceTree = "<group>"; };
 		45CF808626259C5F007AE717 /* Media_final_project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Media_final_project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45CF808926259C5F007AE717 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 			children = (
 				45DC5C40262C5FC80096B04A /* CoreDataHandler.swift */,
 				4570820B2631574F0053CE31 /* API_integrations.swift */,
+				458DA02B2639C2A2003F50BA /* DataModel.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 				45DC5C41262C5FC80096B04A /* CoreDataHandler.swift in Sources */,
 				45CF809426259C60007AE717 /* Media_final_project.xcdatamodeld in Sources */,
 				4570820E2634284D0053CE31 /* DetailScreenViewController.swift in Sources */,
+				458DA02C2639C2A2003F50BA /* DataModel.swift in Sources */,
 				450FF5E5262C3FF2000F1AA2 /* SignUpPageViewController.swift in Sources */,
 				45F3CD1826306B7600DDDDC7 /* MainCollectionViewCell.swift in Sources */,
 				45CF808C26259C5F007AE717 /* SceneDelegate.swift in Sources */,

@@ -54,6 +54,15 @@ class TableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 150, height: 150)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+       
+        
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailScreenViewController") as! DetailScreenViewController
+//            vc.gotDetails = images[indexPath.item]
+            vc.navigationController?.pushViewController(vc, animated: true)
+        
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

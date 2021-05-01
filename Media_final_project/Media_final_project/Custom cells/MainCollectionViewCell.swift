@@ -28,7 +28,7 @@ class MainCollectionViewCell: UICollectionViewCell {
     public func configure(with information : movieData){
         
         let imageHomeURL = "https://image.tmdb.org/t/p/w500"
-        let urlString = imageHomeURL + information.poster_path
+        let urlString = imageHomeURL + (information.poster_path ?? "")
         let url = URL(string: urlString)!
         
         poster.contentMode = .scaleAspectFit

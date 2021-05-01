@@ -43,6 +43,9 @@ class HomeScreenViewController: UIViewController, UITableViewDataSource, UITable
     
     let genre: [String] = ["Popular","Best Dramas","Kids Movies", "Best Movies"]
     
+    var genreItems: [BindedData] = [BindedData(genre: "Popular", genreMovies: []),BindedData(genre: "Best Dramas", genreMovies: []),BindedData(genre: "Kids Movies", genreMovies: []),BindedData(genre: "Best Movies", genreMovies: []),
+    ]
+    
     var api = API_integrations()
     //    var information = [movieData](){
     //        didSet{mainScreenTableView.reloadData()}
@@ -55,13 +58,6 @@ class HomeScreenViewController: UIViewController, UITableViewDataSource, UITable
         mainScreenTableView.register(TableViewCell.nib(), forCellReuseIdentifier: TableViewCell.identifier)
         mainScreenTableView.delegate = self
         mainScreenTableView.dataSource = self
-        // Do any additional setup after loading the view.
-        
-        //        information =
-        //        api.downloadJSON { information in
-        //            self.information = information
-        //            self.mainScreenTableView.reloadData()
-        //        }
         self.getInformation(for: genre)
     }
     
@@ -70,10 +66,11 @@ class HomeScreenViewController: UIViewController, UITableViewDataSource, UITable
         
         let api = API_integrations()
         
-        for genre in genres {
+        for (index, genre) in genres.enumerated() {
             api.DownloadCase(for: genre){ information in
                 self.instance = information
                 self.information.append(self.instance)
+                self.genreItems[index].genreMovies = information
                 self.mainScreenTableView.reloadData()
             }
         }
@@ -83,14 +80,14 @@ class HomeScreenViewController: UIViewController, UITableViewDataSource, UITable
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return genre.count
+        return genreItems.count
         //        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = mainScreenTableView.dequeueReusableCell(withIdentifier: TableViewCell.identifier, for: indexPath) as! TableViewCell
         if information.count > 0
-        {cell.configure(with: information[indexPath.row], genreName: genre[indexPath.row])// manual index of genre that you will make
+        {cell.configure(with: genreItems[indexPath.row].genreMovies, genreName: genreItems[indexPath.row].genre)// manual index of genre that you will make
             
         }
         return cell
@@ -99,4 +96,8 @@ class HomeScreenViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200.0
     }
+}
+
+extension HomeScreenViewController {
+    
 }
