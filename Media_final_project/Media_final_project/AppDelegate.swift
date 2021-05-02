@@ -9,7 +9,8 @@
 import UIKit
 import CoreData
 import FBSDKCoreKit
-
+import Firebase
+import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,7 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             application,
             didFinishLaunchingWithOptions: launchOptions
         )
-        
+        FirebaseApp.configure()
+        GIDSignIn.sharedInstance()?.clientID = "177391651863-9dsjm1mtl3nqb9g8jk5s7omujkikmn66.apps.googleusercontent.com"
         return true
     }
     
@@ -31,14 +33,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         open url: URL,
         options: [UIApplication.OpenURLOptionsKey : Any] = [:]
     ) -> Bool {
-        
-        ApplicationDelegate.shared.application(
+        var flag: Bool = false
+        if ApplicationDelegate.shared.application(
             app,
             open: url,
             sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
-            annotation: options[UIApplication.OpenURLOptionsKey.annotation]
-        )
-        
+            annotation: options[UIApplication.OpenURLOptionsKey.annotation]){
+            // URL scheme facebook
+            flag = ApplicationDelegate.shared.application(
+                app,
+                open: url,
+                sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+                annotation: options[UIApplication.OpenURLOptionsKey.annotation])
+        } else {
+            // URL scheme google
+            flag = GIDSignIn.sharedInstance().handle(url)
+        }
+        return flag
     }  
     
     // MARK: UISceneSession Lifecycle

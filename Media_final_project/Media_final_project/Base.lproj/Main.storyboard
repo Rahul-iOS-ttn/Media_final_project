@@ -93,46 +93,53 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SUi-xC-9fe">
-                                <rect key="frame" x="20" y="353" width="236" height="34"/>
+                                <rect key="frame" x="20" y="422" width="236" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email/UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hpo-eR-p15">
-                                <rect key="frame" x="20" y="324" width="128" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hpo-eR-p15">
+                                <rect key="frame" x="20" y="393" width="81" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c2L-c6-Pc4">
+                                <rect key="frame" x="20" y="349" width="236" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccy-lZ-azs">
+                                <rect key="frame" x="20" y="320" width="41" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qeu-tw-ZPe">
-                                <rect key="frame" x="20" y="436" width="236" height="34"/>
+                                <rect key="frame" x="20" y="505" width="236" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9V-5h-CyK">
-                                <rect key="frame" x="20" y="407" width="74" height="21"/>
+                                <rect key="frame" x="20" y="476" width="74" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sIC-ib-z0s">
-                                <rect key="frame" x="20" y="529" width="236" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DOB(This will become a custom picker)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NqO-jc-YZi">
-                                <rect key="frame" x="20" y="500" width="301" height="21"/>
+                                <rect key="frame" x="20" y="556" width="301" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9N3-Vx-bPS">
-                                <rect key="frame" x="330" y="585" width="54" height="30"/>
+                                <rect key="frame" x="330" y="792" width="54" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
@@ -140,27 +147,41 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MdY-on-FjO">
-                                <rect key="frame" x="20" y="585" width="50" height="30"/>
+                                <rect key="frame" x="20" y="792" width="50" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Google"/>
+                                <connections>
+                                    <action selector="GoogleLogin:" destination="9OO-XL-47t" eventType="touchUpInside" id="Udt-Sg-wgP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ggp-yF-wIw" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="83" y="585" width="67" height="30"/>
+                                <rect key="frame" x="83" y="792" width="67" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Facebook"/>
                             </button>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="6KD-8S-AKE">
+                                <rect key="frame" x="0.0" y="580" width="414" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="dyA-AJ-UXF"/>
                     </view>
                     <connections>
-                        <outlet property="dOBTextfield" destination="sIC-ib-z0s" id="cr3-hT-IPa"/>
+                        <outlet property="dobLabel" destination="NqO-jc-YZi" id="Rux-rH-SI0"/>
+                        <outlet property="dobPicker" destination="6KD-8S-AKE" id="k3o-ey-vU4"/>
+                        <outlet property="emailLabel" destination="ccy-lZ-azs" id="JLK-dN-2xR"/>
+                        <outlet property="emailTextField" destination="c2L-c6-Pc4" id="DFZ-KR-Kl1"/>
                         <outlet property="facebookButton" destination="Ggp-yF-wIw" id="Ezi-UG-MDA"/>
+                        <outlet property="firstNameLabel" destination="aU7-4e-CBe" id="aq2-OK-kBO"/>
                         <outlet property="firstNameTextfield" destination="wv9-Sm-9Ef" id="ad6-Tz-mwR"/>
-                        <outlet property="googleButton" destination="MdY-on-FjO" id="fg9-tx-9wz"/>
+                        <outlet property="googleButton" destination="MdY-on-FjO" id="2C7-x7-QDl"/>
+                        <outlet property="lastNameLabel" destination="lOn-ue-TwP" id="TT9-zY-NSa"/>
                         <outlet property="lastNameTextfield" destination="bS6-Xp-rM0" id="jkD-79-RcQ"/>
+                        <outlet property="passwordLabel" destination="E9V-5h-CyK" id="9gA-HI-Lod"/>
                         <outlet property="passwordTextfield" destination="Qeu-tw-ZPe" id="6PN-mH-LpV"/>
                         <outlet property="signUpButton" destination="9N3-Vx-bPS" id="qxB-dd-qe0"/>
+                        <outlet property="userNameLabel" destination="Hpo-eR-p15" id="LZH-um-RTW"/>
                         <outlet property="userNameTextfield" destination="SUi-xC-9fe" id="jCg-xo-lWM"/>
                     </connections>
                 </viewController>
@@ -214,6 +235,9 @@
                                 <rect key="frame" x="18" y="415" width="50" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Google"/>
+                                <connections>
+                                    <action selector="googleBtnTapped:" destination="QiO-ig-Jza" eventType="touchUpInside" id="mkh-r0-ApO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ht6-hR-oIu">
                                 <rect key="frame" x="77" y="415" width="67" height="30"/>
@@ -225,6 +249,8 @@
                         <viewLayoutGuide key="safeArea" id="LiC-le-gGM"/>
                     </view>
                     <connections>
+                        <outlet property="facebookButton" destination="ht6-hR-oIu" id="oq4-Eh-9ej"/>
+                        <outlet property="googleButton" destination="Gez-bu-3qb" id="xFu-B3-IcQ"/>
                         <outlet property="passwordLabel" destination="EZc-Y2-2ox" id="59G-Zy-XYw"/>
                         <outlet property="passwordTextField" destination="eRS-If-mAe" id="axR-Si-zet"/>
                         <outlet property="signInButton" destination="5kz-H7-uEy" id="aP5-QC-k08"/>

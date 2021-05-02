@@ -24,14 +24,16 @@ struct  CoreDataHandler {
          return container
     }()
    
-    func createUserDetails(firstName: String, lastName: String, username: String, password: String) -> User? {
+    func createUserDetails(firstName: String, lastName: String, username: String, password: String, email: String, dob: Date) -> User? {
         
         let context = persistentContainer.viewContext
         let user = NSEntityDescription.insertNewObject(forEntityName: "User", into: context) as! User
         user.firstname = firstName
         user.lastname = lastName
+        user.email = email
         user.username = username
         user.password = password
+        user.dob = dob
         
         do {
             try context.save()
@@ -64,7 +66,7 @@ struct  CoreDataHandler {
         
         let fetchRequest = NSFetchRequest<User>(entityName: "User")
         fetchRequest.fetchLimit = 1
-        fetchRequest.predicate = NSPredicate(format: "username == %@", username)
+        fetchRequest.predicate = NSPredicate(format: "username == ^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$", username)
         
         do {
             let details = try context.fetch(fetchRequest)
