@@ -24,7 +24,7 @@ class SignUpPageViewController: UIViewController {
     
     @IBOutlet weak var googleButton: UIButton!
     @IBOutlet weak var facebookButton: FBLoginButton!
-
+    
     var userData = [User?]()
     
     override func viewDidLoad() {
@@ -40,11 +40,6 @@ class SignUpPageViewController: UIViewController {
             request.start { (connection, result, error) in
                 print("\(String(describing: result))")
             }
-            UserDefaults.standard.set(true, forKey: "ISUSERLOGGEDIN")
-            
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let MainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
-            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(MainTabBarController)
         } else {
             facebookButton.permissions = ["public_profile", "email"]
             facebookButton.delegate = self
@@ -60,7 +55,7 @@ class SignUpPageViewController: UIViewController {
         let SignInPage = storyboard?.instantiateViewController(withIdentifier: "SignInPageViewController") as! SignInPageViewController
         navigationController?.pushViewController(SignInPage, animated: true)
     }
-
+    
 }
 
 extension SignUpPageViewController: LoginButtonDelegate {
@@ -70,8 +65,12 @@ extension SignUpPageViewController: LoginButtonDelegate {
         let request = FBSDKLoginKit.GraphRequest(graphPath: "me", parameters: ["fields": "id, email, first_name, last_name, picture, short_name,name, middle_name, name_format, age_range"], tokenString: token, version: nil, httpMethod: .get)
         request.start { (connection, result, error) in
             print("\(String(describing: result))")
-            
         }
+        UserDefaults.standard.set(true, forKey: "ISUSERLOGGEDIN")
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let MainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(MainTabBarController)// this in sign in page
     }
     
     

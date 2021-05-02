@@ -29,113 +29,78 @@ import UIKit
 //"vote_average":7.5,
 //"vote_count":8984
 
-struct MainData : Decodable {
-    var page:Int?
-    var results: [movieData]?
-    var total_pages: Int?
-    var total_results: Int?
-}
-
-struct movieData : Decodable {
-    var adult: Bool?
-    var backdrop_path: String?
-    var genre_ids: [Int]?
-    var id: Int?
-    var original_language: String?
-    var original_title: String?
-    var overview: String?
-    var popularity: Double?
-    var poster_path: String?
-    var release_date: String?
-    var title: String?
-    var video: Bool?
-    var vote_average: Double?
-    var vote_count: Int?
-}
-
-extension UIImageView {
-    func downloadedFrom(url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFill) {
-        contentMode = mode
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard
-                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-                let data = data, error == nil,
-                let image = UIImage(data: data)
-                else { return }
-            DispatchQueue.main.async() { [weak self] in
-                self?.image = image
-            }
-        }.resume()
-    }
-    
-    func downloaded(from link: String, contentMode mode: UIView.ContentMode = .scaleAspectFill) {
-        guard let url = URL(string: link) else { return }
-        downloadedFrom(url: url, contentMode: mode)
-    }
-}
-
 class API_integrations {
     let imageHomeURL = "https://image.tmdb.org/t/p/w500"
     
     var completeInformation: MainData?
     
-    func downloadJSON(finalURL: URL?, completed: @escaping ([movieData]) -> Void) {
+    let session = URLSession.shared
+    
+    func downloadJSON(finalURL: URL?, completed: @escaping (Result<[movieData], Error>) -> Void) {
         
-        
-        //paths to specific links will be defines with their respective use-cases
-        //        let finalURL = URL(string: "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=820016b7116f872f5f27bf56f9fdfb66")
-        //    let finalURL = homeURL + popular + api_key
-        URLSession.shared.dataTask(with: finalURL!) { (data, response, error) in
-            print(" akjsdhbf ")
-            if error == nil {
+        _ = session.dataTask(with: finalURL!) { (data, response, error) in
+            if let dataError = error {
+                DispatchQueue.main.async {
+                    completed(.failure(dataError))
+                }
+            } else if let information = data {
                 do {
-                    self.completeInformation = try JSONDecoder().decode(MainData.self, from: data!)
-                    DispatchQueue.main.async {
-                        completed(self.completeInformation!.results!)
+                    self.completeInformation = try JSONDecoder().decode(MainData.self, from: information)
+                    DispatchQueue.main.async {//result data type use and return error if it happens here
+                        completed(.success(self.completeInformation!.results!))
                     }
                 }catch {
-                    print("JSON NOT FOUND")
+                    DispatchQueue.main.async {
+                        completed(.failure(NSError(domain: "Error in data parsing my friend", code: 101, userInfo: nil)))
+                    }
+                }
+            }else {
+                DispatchQueue.main.async {
+                    completed(.failure(NSError(domain: "Error api download", code: 101, userInfo: nil)))
                 }
             }
         }.resume()
     }
     
-    func DownloadCase(for genreCategory: String, downloadCaseCompleted: @escaping ([movieData]) -> Void) {
+    func DownloadCase(for genreCategory: String, downloadCaseCompleted: @escaping (Result<[movieData], Error>) -> Void) {
         let homeURL: String = "https://api.themoviedb.org/3/"
         let api_key: String = "&api_key=820016b7116f872f5f27bf56f9fdfb66"
-        switch genreCategory {
+        switch genreCategory { // If a category fails to retrieve data then have it throw an error
         case "Popular":
             let popular: String = "discover/movie?sort_by=popularity.desc"
             let finalURL = URL(string: homeURL + popular + api_key)
-            //            self.downloadJSON() { information in
-            //                self.information = information
-            //                self.mainScreenTableView.reloadData()
-            //            }
-            self.downloadJSON(finalURL: finalURL) { information in
-                downloadCaseCompleted(information)
-                //proceed function
+            
+            DispatchQueue.main.async {
+                self.downloadJSON(finalURL: finalURL) { (result) in
+                    downloadCaseCompleted(result)
+                }
             }
         case "Best Dramas":
             let bestDramas: String = "discover/movie?with_genres=18&sort_by=vote_average.desc&vote_count.gte=10"
             let finalURL = URL(string: homeURL + bestDramas + api_key)
-            self.downloadJSON(finalURL: finalURL) { information in
-                downloadCaseCompleted(information)
+            DispatchQueue.main.async {
+                self.downloadJSON(finalURL: finalURL) { (result) in
+                    downloadCaseCompleted(result)
+                }
             }
         case "Kids Movies":
             let kidsMovies: String = "discover/movie?certification_country=US&certification.lte=G&sort_by=popularity.desc"
             let finalURL = URL(string: homeURL + kidsMovies + api_key)
-            self.downloadJSON(finalURL: finalURL) { information in
-                downloadCaseCompleted(information)
+            DispatchQueue.main.async {
+                self.downloadJSON(finalURL: finalURL) { (result) in
+                    downloadCaseCompleted(result)
+                }
             }
         case "Best Movies":
             let bestMovies: String = "discover/movie?primary_release_year=2010&sort_by=vote_average.desc"
             let finalURL = URL(string: homeURL + bestMovies + api_key)
-            self.downloadJSON(finalURL: finalURL) { information in
-                downloadCaseCompleted(information)
+            DispatchQueue.main.async {
+                self.downloadJSON(finalURL: finalURL) { (result) in
+                    downloadCaseCompleted(result)
+                }
             }
         default:
-            print("error Somewhere in API integration")
+            print("Error in DownloadCase")
         }
     }
 }
