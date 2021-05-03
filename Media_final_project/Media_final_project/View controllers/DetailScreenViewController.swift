@@ -15,7 +15,7 @@ class DetailScreenViewController: UIViewController {
     @IBOutlet weak var movieLang: UILabel!
     @IBOutlet weak var movieOverview: UILabel!
     
-    var movieDetails = movieData()
+    var movieDetails = MovieData()
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -64,7 +64,7 @@ class HomeScreenViewController: UIViewController {
         present(sideMenu!, animated: true)
     }
 }
-
+// MARK: - TableView and Side Drawer
 extension HomeScreenViewController: UITableViewDataSource, UITableViewDelegate, MenuControllerDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -25,7 +25,7 @@ class SearchTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    func configure(with movie : movieData){ //change this finction to take an array of strings which displays genres
+    func configure(with movie : MovieData){ //change this finction to take an array of strings which displays genres
         movieTitle.text = movie.title
         
         let urlString = "https://image.tmdb.org/t/p/w500" + movie.poster_path!

@@ -28,7 +28,7 @@
                                     <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="SignInButtonNavTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VlL-ec-bSR"/>
+                                    <action selector="signInButtonNavTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Roj-YM-6XA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hu5-92-1w8">
@@ -38,7 +38,7 @@
                                     <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="SignUpButtonNavTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UGs-gY-Z1P"/>
+                                    <action selector="signUpButtonNavTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xdS-aK-O3J"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -58,8 +58,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="YJI-V9-p61"/>
                     <connections>
-                        <outlet property="SignUpPage" destination="hu5-92-1w8" id="ZKy-el-8In"/>
-                        <outlet property="SigninPage" destination="8r2-3I-Ox5" id="sWU-X7-8xv"/>
+                        <outlet property="signUpPage" destination="hu5-92-1w8" id="1jQ-a8-3OB"/>
+                        <outlet property="signinPage" destination="8r2-3I-Ox5" id="04E-5I-1tY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

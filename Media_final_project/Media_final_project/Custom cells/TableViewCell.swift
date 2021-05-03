@@ -16,7 +16,7 @@ class TableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionView
     
     static let identifier = "TableViewCell"
     
-    lazy var information = [movieData]()
+    lazy var information = [MovieData]()
     
     static func nib() -> UINib {
         return UINib(nibName: "TableViewCell", bundle: nil)
@@ -39,7 +39,7 @@ class TableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionView
         return information.count
     }
     
-    func configure(with information : [movieData],genreName: String){ //change this finction to take an array of strings which displays genres
+    func configure(with information : [MovieData],genreName: String){ //change this finction to take an array of strings which displays genres
         self.information = information
         genreLabel.text = genreName
         genreCollectionView.reloadData()

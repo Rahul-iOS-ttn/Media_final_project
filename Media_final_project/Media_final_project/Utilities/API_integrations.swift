@@ -36,7 +36,7 @@ class API_integrations {
     
     let session = URLSession.shared
     
-    func downloadJSON(finalURL: URL?, completed: @escaping (Result<[movieData], Error>) -> Void) {
+    func downloadJSON(finalURL: URL?, completed: @escaping (Result<[MovieData], Error>) -> Void) {
         
         _ = session.dataTask(with: finalURL!) { (data, response, error) in
             if let dataError = error {
@@ -62,7 +62,7 @@ class API_integrations {
         }.resume()
     }
     
-    func DownloadCase(for genreCategory: String, downloadCaseCompleted: @escaping (Result<[movieData], Error>) -> Void) {
+    func downloadCase(for genreCategory: String, downloadCaseCompleted: @escaping (Result<[MovieData], Error>) -> Void) {
         let homeURL: String = "https://api.themoviedb.org/3/"
         let api_key: String = "&api_key=820016b7116f872f5f27bf56f9fdfb66"
         switch genreCategory { // If a category fails to retrieve data then have it throw an error

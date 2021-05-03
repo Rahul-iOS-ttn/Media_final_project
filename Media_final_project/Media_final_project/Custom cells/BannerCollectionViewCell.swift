@@ -31,7 +31,7 @@ class BannerCollectionViewCell: UICollectionViewCell {
            bannerLabel.text = ""
        }
     
-    func configure(_ data: movieData?){
+    func configure(_ data: MovieData?){
         
         if let posterPath = data?.backdrop_path, let url = URL(string: "https://image.tmdb.org/t/p/w500" + posterPath){
             bannerImageView.downloadedFrom(url: url)

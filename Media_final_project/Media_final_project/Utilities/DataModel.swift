@@ -11,17 +11,17 @@ import Foundation
 
 struct BindedData {
     var genre: String
-    var genreMovies: [movieData]
+    var genreMovies: [MovieData]
 }
 
 struct MainData : Decodable {
     var page:Int?
-    var results: [movieData]?
+    var results: [MovieData]?
     var total_pages: Int?
     var total_results: Int?
 }
 
-struct movieData : Decodable {
+struct MovieData : Decodable {
     var adult: Bool?
     var backdrop_path: String?
     var genre_ids: [Int]?

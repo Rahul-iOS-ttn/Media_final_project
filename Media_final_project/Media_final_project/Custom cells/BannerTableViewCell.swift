@@ -10,7 +10,7 @@ import UIKit
 
 class BannerTableViewCell: UITableViewCell {
     @IBOutlet weak var bannerCollectionView: UICollectionView!
-    var movieInfo = [movieData]()
+    var movieInfo = [MovieData]()
     
     static let identifier = "BannerTableViewCell"
     

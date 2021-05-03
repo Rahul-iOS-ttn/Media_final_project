@@ -25,7 +25,7 @@ class MainCollectionViewCell: UICollectionViewCell {
     static func nib() -> UINib {
         return UINib(nibName: "MainCollectionViewCell", bundle: nil)
     }
-    public func configure(with information : movieData){
+    public func configure(with information : MovieData){
         
         let imageHomeURL = "https://image.tmdb.org/t/p/w500"
         let urlString = imageHomeURL + (information.poster_path ?? "")

@@ -12,8 +12,8 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchTableView: UITableView!
     
-    var allDataforSearch = [movieData]()
-    var filteredData = [movieData]()
+    var allDataforSearch = [MovieData]()
+    var filteredData = [MovieData]()
     var homevm = HomeScreenViewModel()
     var isSearching = false
     

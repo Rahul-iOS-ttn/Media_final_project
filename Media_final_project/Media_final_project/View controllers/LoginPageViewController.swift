@@ -11,22 +11,22 @@ import UIKit
 class LoginPageViewController: UIViewController {
     
     
-    @IBOutlet weak var SignUpPage: UIButton!
-    @IBOutlet weak var SigninPage: UIButton!
+    @IBOutlet weak var signUpPage: UIButton!
+    @IBOutlet weak var signinPage: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func SignInButtonNavTapped(_ sender: Any) {
-        let SignInPage = storyboard?.instantiateViewController(withIdentifier: "SignInPageViewController") as! SignInPageViewController
-        navigationController?.pushViewController(SignInPage, animated: true)
+    @IBAction func signInButtonNavTapped(_ sender: Any) {
+        let signInPage = storyboard?.instantiateViewController(withIdentifier: "SignInPageViewController") as! SignInPageViewController
+        navigationController?.pushViewController(signInPage, animated: true)
     }
     
-    @IBAction func SignUpButtonNavTapped(_ sender: Any) {
-        let SignUpPage = storyboard?.instantiateViewController(withIdentifier: "SignUpPageViewController") as! SignUpPageViewController
-        navigationController?.pushViewController(SignUpPage, animated: true)
+    @IBAction func signUpButtonNavTapped(_ sender: Any) {
+        let signUpPage = storyboard?.instantiateViewController(withIdentifier: "SignUpPageViewController") as! SignUpPageViewController
+        navigationController?.pushViewController(signUpPage, animated: true)
     }
     
 //changes

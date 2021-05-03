@@ -21,7 +21,7 @@ class HomeScreenViewModel {
     func getInformation( allDone: @escaping (Bool, String) -> Void ) {
         for (index, genreItem) in genreItems.enumerated() { // result functions
             
-            api.DownloadCase(for: genreItem.genre) { (result) in
+            api.downloadCase(for: genreItem.genre) { (result) in
                 switch result {
                 case .success(let instanceData):
                     self.genreItems[index].genreMovies = instanceData
