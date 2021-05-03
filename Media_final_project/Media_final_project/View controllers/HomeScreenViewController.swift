@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import SideMenu
 
 
 class HomeScreenViewController: UIViewController {
+    
+    
     @IBOutlet weak var mainScreenTableView: UITableView!
     
     var homeScreenViewModel = HomeScreenViewModel()
@@ -22,6 +25,8 @@ class HomeScreenViewController: UIViewController {
         return refreshControl
     }()
     
+    private var sideMenu: SideMenuNavigationController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mainScreenTableView.addSubview(self.refreshControl)
@@ -32,6 +37,18 @@ class HomeScreenViewController: UIViewController {
         mainScreenTableView.delegate = self
         mainScreenTableView.dataSource = self
         getHomeScreenData()
+        
+        let menu = MenuController(with: SideMenuItem.allCases)
+        
+        menu.delegate = self
+        
+        sideMenu = SideMenuNavigationController(rootViewController: menu)
+        sideMenu?.leftSide = true
+        sideMenu?.setNavigationBarHidden(true, animated: false)
+        
+        SideMenuManager.default.leftMenuNavigationController = sideMenu
+        SideMenuManager.default.addPanGestureToPresent(toView: view)
+        
     }
     
     @objc func getHomeScreenData() {
@@ -43,9 +60,12 @@ class HomeScreenViewController: UIViewController {
             }
         }
     }
+    @IBAction func didTapMenuButton(){
+        present(sideMenu!, animated: true)
+    }
 }
 
-extension HomeScreenViewController: UITableViewDataSource, UITableViewDelegate {
+extension HomeScreenViewController: UITableViewDataSource, UITableViewDelegate, MenuControllerDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return homeScreenViewModel.genreItems.count
@@ -66,5 +86,36 @@ extension HomeScreenViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200.0
+    }
+    
+    func didSelectMenuItem(menuOption: SideMenuItem) {
+        sideMenu?.dismiss(animated: true, completion: nil)
+        
+        
+        switch menuOption {
+        case .home:
+            openAlert(title: "Alert", message: "Home Tapped", alertStyle: .alert, actionTitles: ["Okay"], actionStyles: [.default], actions: [{_ in }])
+        case .location:
+            openAlert(title: "Alert", message: "Location Tapped", alertStyle: .alert, actionTitles: ["Okay"], actionStyles: [.default], actions: [{_ in }])
+        case .movies:
+            openAlert(title: "Alert", message: "Movies Tapped", alertStyle: .alert, actionTitles: ["Okay"], actionStyles: [.default], actions: [{_ in }])
+        case .notification:
+            openAlert(title: "Alert", message: "Notification Tapped", alertStyle: .alert, actionTitles: ["Okay"], actionStyles: [.default], actions: [{_ in }])
+        case .employee:
+            openAlert(title: "Alert", message: "Employee Tapped", alertStyle: .alert, actionTitles: ["Okay"], actionStyles: [.default], actions: [{_ in }])
+        case .country:
+            openAlert(title: "Alert", message: "Country Tapped", alertStyle: .alert, actionTitles: ["Okay"], actionStyles: [.default], actions: [{_ in }])
+        case .language:
+            openAlert(title: "Alert", message: "Language Tapped", alertStyle: .alert, actionTitles: ["Okay"], actionStyles: [.default], actions: [{_ in }])
+        case .aboutus:
+            openAlert(title: "Alert", message: "About us Tapped", alertStyle: .alert, actionTitles: ["Okay"], actionStyles: [.default], actions: [{_ in }])
+        case .faq:
+            openAlert(title: "Alert", message: "FAQ Tapped", alertStyle: .alert, actionTitles: ["Okay"], actionStyles: [.default], actions: [{_ in }])
+        case .changetheme:
+            openAlert(title: "Alert", message: "Theme Tapped", alertStyle: .alert, actionTitles: ["Okay"], actionStyles: [.default], actions: [{_ in }])
+        case .logout:
+            openAlert(title: "Alert", message: "Logout Tapped", alertStyle: .alert, actionTitles: ["Okay"], actionStyles: [.default], actions: [{_ in }])
+        }
+        
     }
 }

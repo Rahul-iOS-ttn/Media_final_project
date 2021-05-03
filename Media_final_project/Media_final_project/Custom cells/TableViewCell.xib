@@ -23,7 +23,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="rQK-ac-dOx">
-                        <rect key="frame" x="0.0" y="30.5" width="473" height="207.5"/>
+                        <rect key="frame" x="0.0" y="25.5" width="473" height="212.5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kvz-e1-fdb">
                             <size key="itemSize" width="128" height="128"/>
@@ -35,7 +35,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="eSp-kp-g4U" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="3m0-Ux-Dn5"/>
-                    <constraint firstItem="rQK-ac-dOx" firstAttribute="top" secondItem="eSp-kp-g4U" secondAttribute="bottom" constant="10" id="ExQ-hT-ug2"/>
+                    <constraint firstItem="rQK-ac-dOx" firstAttribute="top" secondItem="eSp-kp-g4U" secondAttribute="bottom" constant="5" id="ExQ-hT-ug2"/>
                     <constraint firstItem="eSp-kp-g4U" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Z73-3K-g19"/>
                     <constraint firstAttribute="bottom" secondItem="rQK-ac-dOx" secondAttribute="bottom" id="a6L-Cb-OE9"/>
                     <constraint firstAttribute="trailing" secondItem="eSp-kp-g4U" secondAttribute="trailing" id="j9W-IN-hoQ"/>

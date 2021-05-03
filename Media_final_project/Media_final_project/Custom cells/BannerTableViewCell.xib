@@ -16,9 +16,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="aTh-d5-TwW">
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="aTh-d5-TwW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Z2Z-DD-BS7">
                             <size key="itemSize" width="128" height="128"/>
@@ -28,6 +27,12 @@
                         </collectionViewFlowLayout>
                     </collectionView>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="aTh-d5-TwW" secondAttribute="bottom" id="0KS-od-DsZ"/>
+                    <constraint firstItem="aTh-d5-TwW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Twq-jx-aU8"/>
+                    <constraint firstItem="aTh-d5-TwW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="dhm-o1-E7z"/>
+                    <constraint firstAttribute="trailing" secondItem="aTh-d5-TwW" secondAttribute="trailing" id="wum-FT-gg1"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>

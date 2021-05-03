@@ -8,6 +8,7 @@ target 'Media_final_project' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'GoogleSignIn'
+  pod 'SideMenu'
 
   # Pods for Media_final_project
 

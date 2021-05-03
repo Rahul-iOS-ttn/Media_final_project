@@ -38,6 +38,8 @@ class MainCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        poster.layer.cornerRadius = 10
+        poster.clipsToBounds = true
     }
     
 }
