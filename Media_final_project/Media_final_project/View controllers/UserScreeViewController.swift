@@ -10,11 +10,26 @@ import UIKit
 
 class UserScreeViewController: UIViewController {
     @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var themeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        applyTheme()
     
+    }
+    
+    @IBAction func themeSwitchChanged(_ sender: UISwitch) {
+        Theme.current = sender.isOn ? LightTheme() : DarkTheme()
+        UserDefaults.standard.set(sender.isOn, forKey: "Theme")
+        applyTheme()
+    }
+    
+    
+    fileprivate func applyTheme() {
+        view.backgroundColor = Theme.current.background
+        themeLabel.textColor = Theme.current.textColor
+        themeLabel.font = Theme.current.mainFontName
+        themeLabel.backgroundColor = Theme.current.accent
     }
     
     @IBAction func logoutButtonTapped () {

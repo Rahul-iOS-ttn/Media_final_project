@@ -10,6 +10,8 @@
 		450FF5E3262C3FDC000F1AA2 /* SignInPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450FF5E2262C3FDC000F1AA2 /* SignInPageViewController.swift */; };
 		450FF5E5262C3FF2000F1AA2 /* SignUpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450FF5E4262C3FF2000F1AA2 /* SignUpPageViewController.swift */; };
 		4537B9E8263FAB00004C87AA /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4537B9E7263FAB00004C87AA /* SideMenu.swift */; };
+		4537B9EB263FDCA4004C87AA /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4537B9EA263FDCA4004C87AA /* Theme.swift */; };
+		4537B9ED263FDD22004C87AA /* ThemeSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4537B9EC263FDD22004C87AA /* ThemeSet.swift */; };
 		4570820C2631574F0053CE31 /* API_integrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4570820B2631574F0053CE31 /* API_integrations.swift */; };
 		4570820E2634284D0053CE31 /* DetailScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4570820D2634284D0053CE31 /* DetailScreenViewController.swift */; };
 		458DA02C2639C2A2003F50BA /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458DA02B2639C2A2003F50BA /* DataModel.swift */; };
@@ -72,6 +74,8 @@
 		450FF5E2262C3FDC000F1AA2 /* SignInPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPageViewController.swift; sourceTree = "<group>"; };
 		450FF5E4262C3FF2000F1AA2 /* SignUpPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPageViewController.swift; sourceTree = "<group>"; };
 		4537B9E7263FAB00004C87AA /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
+		4537B9EA263FDCA4004C87AA /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		4537B9EC263FDD22004C87AA /* ThemeSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSet.swift; sourceTree = "<group>"; };
 		4570820B2631574F0053CE31 /* API_integrations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_integrations.swift; sourceTree = "<group>"; };
 		4570820D2634284D0053CE31 /* DetailScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenViewController.swift; sourceTree = "<group>"; };
 		458DA02B2639C2A2003F50BA /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
@@ -149,6 +153,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4537B9E9263FDC8A004C87AA /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				4537B9EA263FDCA4004C87AA /* Theme.swift */,
+				4537B9EC263FDD22004C87AA /* ThemeSet.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
 		458DA031263E647D003F50BA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +213,7 @@
 				45DC5C3E262C5F710096B04A /* View controllers */,
 				458DA031263E647D003F50BA /* Extensions */,
 				458DA034263E6598003F50BA /* Protocols */,
+				4537B9E9263FDC8A004C87AA /* Theme */,
 				45CF808F26259C5F007AE717 /* Main.storyboard */,
 				45CF809526259C60007AE717 /* Assets.xcassets */,
 				45CF809726259C60007AE717 /* LaunchScreen.storyboard */,
@@ -576,6 +590,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4537B9ED263FDD22004C87AA /* ThemeSet.swift in Sources */,
+				4537B9EB263FDCA4004C87AA /* Theme.swift in Sources */,
 				458DA038263E66A5003F50BA /* LoginExtensions.swift in Sources */,
 				45CF808E26259C5F007AE717 /* LoginPageViewController.swift in Sources */,
 				458DA030263E40EA003F50BA /* DesignComponents.swift in Sources */,

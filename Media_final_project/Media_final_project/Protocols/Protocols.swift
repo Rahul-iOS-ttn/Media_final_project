@@ -7,6 +7,17 @@
 //
 
 import Foundation
+import UIKit
 
 
 protocol LoggableProtocol { }
+
+//MARK: - Theme Protocol
+
+protocol ThemeProtocol {
+    var mainFontName : UIFont { get }
+    var textColor: UIColor { get }
+    var accent: UIColor { get }
+    var background: UIColor { get }
+    var tint: UIColor { get }
+}
