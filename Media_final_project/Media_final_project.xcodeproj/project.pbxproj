@@ -30,6 +30,13 @@
 		45CF80A426259C61007AE717 /* Media_final_projectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF80A326259C61007AE717 /* Media_final_projectTests.swift */; };
 		45CF80AF26259C61007AE717 /* Media_final_projectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF80AE26259C61007AE717 /* Media_final_projectUITests.swift */; };
 		45D131E1263ED3000075AC35 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 45D131E0263ED3000075AC35 /* GoogleService-Info.plist */; };
+		45D131E3263F3E410075AC35 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D131E2263F3E410075AC35 /* SearchViewController.swift */; };
+		45D131E6263F434C0075AC35 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D131E4263F434C0075AC35 /* SearchTableViewCell.swift */; };
+		45D131E7263F434C0075AC35 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45D131E5263F434C0075AC35 /* SearchTableViewCell.xib */; };
+		45D131EA263F90620075AC35 /* BannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D131E8263F90620075AC35 /* BannerTableViewCell.swift */; };
+		45D131EB263F90620075AC35 /* BannerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45D131E9263F90620075AC35 /* BannerTableViewCell.xib */; };
+		45D131EE263F908A0075AC35 /* BannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D131EC263F908A0075AC35 /* BannerCollectionViewCell.swift */; };
+		45D131EF263F908A0075AC35 /* BannerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45D131ED263F908A0075AC35 /* BannerCollectionViewCell.xib */; };
 		45DC5C41262C5FC80096B04A /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC5C40262C5FC80096B04A /* CoreDataHandler.swift */; };
 		45F3CD10263051FC00DDDDC7 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F3CD0F263051FC00DDDDC7 /* HomeScreenViewController.swift */; };
 		45F3CD1426306ABB00DDDDC7 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F3CD1226306ABB00DDDDC7 /* TableViewCell.swift */; };
@@ -90,6 +97,13 @@
 		45CF80AE26259C61007AE717 /* Media_final_projectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media_final_projectUITests.swift; sourceTree = "<group>"; };
 		45CF80B026259C61007AE717 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45D131E0263ED3000075AC35 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		45D131E2263F3E410075AC35 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		45D131E4263F434C0075AC35 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		45D131E5263F434C0075AC35 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
+		45D131E8263F90620075AC35 /* BannerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerTableViewCell.swift; sourceTree = "<group>"; };
+		45D131E9263F90620075AC35 /* BannerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerTableViewCell.xib; sourceTree = "<group>"; };
+		45D131EC263F908A0075AC35 /* BannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCollectionViewCell.swift; sourceTree = "<group>"; };
+		45D131ED263F908A0075AC35 /* BannerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerCollectionViewCell.xib; sourceTree = "<group>"; };
 		45DC5C40262C5FC80096B04A /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
 		45F3CD0F263051FC00DDDDC7 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		45F3CD1226306ABB00DDDDC7 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -222,6 +236,7 @@
 				458DA02D263E3FA5003F50BA /* HomeScreenViewModel.swift */,
 				4570820D2634284D0053CE31 /* DetailScreenViewController.swift */,
 				45BA166C2637F99F00430371 /* UserScreeViewController.swift */,
+				45D131E2263F3E410075AC35 /* SearchViewController.swift */,
 			);
 			path = "View controllers";
 			sourceTree = "<group>";
@@ -244,6 +259,12 @@
 				45F3CD1326306ABB00DDDDC7 /* TableViewCell.xib */,
 				45F3CD1626306B7600DDDDC7 /* MainCollectionViewCell.swift */,
 				45F3CD1726306B7600DDDDC7 /* MainCollectionViewCell.xib */,
+				45D131E4263F434C0075AC35 /* SearchTableViewCell.swift */,
+				45D131E5263F434C0075AC35 /* SearchTableViewCell.xib */,
+				45D131E8263F90620075AC35 /* BannerTableViewCell.swift */,
+				45D131E9263F90620075AC35 /* BannerTableViewCell.xib */,
+				45D131EC263F908A0075AC35 /* BannerCollectionViewCell.swift */,
+				45D131ED263F908A0075AC35 /* BannerCollectionViewCell.xib */,
 			);
 			path = "Custom cells";
 			sourceTree = "<group>";
@@ -383,10 +404,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				45CF809926259C60007AE717 /* LaunchScreen.storyboard in Resources */,
+				45D131EB263F90620075AC35 /* BannerTableViewCell.xib in Resources */,
 				45F3CD1526306ABB00DDDDC7 /* TableViewCell.xib in Resources */,
 				45CF809626259C60007AE717 /* Assets.xcassets in Resources */,
 				45F3CD1926306B7600DDDDC7 /* MainCollectionViewCell.xib in Resources */,
+				45D131E7263F434C0075AC35 /* SearchTableViewCell.xib in Resources */,
 				45CF809126259C5F007AE717 /* Main.storyboard in Resources */,
+				45D131EF263F908A0075AC35 /* BannerCollectionViewCell.xib in Resources */,
 				45D131E1263ED3000075AC35 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -557,17 +581,21 @@
 				458DA036263E666D003F50BA /* Protocols.swift in Sources */,
 				45CF808A26259C5F007AE717 /* AppDelegate.swift in Sources */,
 				45F3CD1426306ABB00DDDDC7 /* TableViewCell.swift in Sources */,
+				45D131E6263F434C0075AC35 /* SearchTableViewCell.swift in Sources */,
 				458DA033263E64A0003F50BA /* UIElementExtensions.swift in Sources */,
 				458DA02E263E3FA6003F50BA /* HomeScreenViewModel.swift in Sources */,
 				45DC5C41262C5FC80096B04A /* CoreDataHandler.swift in Sources */,
 				45CF809426259C60007AE717 /* Media_final_project.xcdatamodeld in Sources */,
+				45D131E3263F3E410075AC35 /* SearchViewController.swift in Sources */,
 				4570820E2634284D0053CE31 /* DetailScreenViewController.swift in Sources */,
 				458DA02C2639C2A2003F50BA /* DataModel.swift in Sources */,
 				450FF5E5262C3FF2000F1AA2 /* SignUpPageViewController.swift in Sources */,
 				45F3CD1826306B7600DDDDC7 /* MainCollectionViewCell.swift in Sources */,
+				45D131EE263F908A0075AC35 /* BannerCollectionViewCell.swift in Sources */,
 				45CF808C26259C5F007AE717 /* SceneDelegate.swift in Sources */,
 				4570820C2631574F0053CE31 /* API_integrations.swift in Sources */,
 				450FF5E3262C3FDC000F1AA2 /* SignInPageViewController.swift in Sources */,
+				45D131EA263F90620075AC35 /* BannerTableViewCell.swift in Sources */,
 				45BA166D2637F99F00430371 /* UserScreeViewController.swift in Sources */,
 				458DA03A263E6712003F50BA /* NotifyingExtensions.swift in Sources */,
 			);

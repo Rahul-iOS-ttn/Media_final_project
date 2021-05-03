@@ -33,7 +33,6 @@ class MainCollectionViewCell: UICollectionViewCell {
         
         poster.contentMode = .scaleAspectFit
         poster.downloadedFrom(url: url)
-        
     }
     
     override func awakeFromNib() {

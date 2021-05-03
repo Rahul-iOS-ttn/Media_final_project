@@ -14,16 +14,27 @@ class HomeScreenViewController: UIViewController {
     
     var homeScreenViewModel = HomeScreenViewModel()
     
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(getHomeScreenData), for: UIControl.Event.valueChanged)
+        refreshControl.tintColor = UIColor.red
+        
+        return refreshControl
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        mainScreenTableView.addSubview(self.refreshControl)
         mainScreenTableView.register(TableViewCell.nib(), forCellReuseIdentifier: TableViewCell.identifier)
+        mainScreenTableView.register(BannerTableViewCell.nib(), forCellReuseIdentifier: BannerTableViewCell.identifier)
+        mainScreenTableView.estimatedRowHeight = UITableView.automaticDimension
+        mainScreenTableView.rowHeight = UITableView.automaticDimension
         mainScreenTableView.delegate = self
         mainScreenTableView.dataSource = self
         getHomeScreenData()
-        self.mainScreenTableView.reloadData()
     }
     
-    func getHomeScreenData() {
+    @objc func getHomeScreenData() {
         homeScreenViewModel.getInformation { (dataFetchSuccess, error) in
             if dataFetchSuccess {
                 self.mainScreenTableView.reloadData()
@@ -42,12 +53,15 @@ extension HomeScreenViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = mainScreenTableView.dequeueReusableCell(withIdentifier: TableViewCell.identifier, for: indexPath) as! TableViewCell
-        if homeScreenViewModel.genreItems.count > 0
-        {cell.configure(with: homeScreenViewModel.genreItems[indexPath.row].genreMovies, genreName: homeScreenViewModel.genreItems[indexPath.row].genre)// manual index of genre that you will make
-            
+        if indexPath.row == 0 {
+            let cell = mainScreenTableView.dequeueReusableCell(withIdentifier: BannerTableViewCell.identifier, for: indexPath) as! BannerTableViewCell
+            cell.configure(homeScreenViewModel.genreItems[indexPath.row])
+            return cell
+        } else {
+            let cell = mainScreenTableView.dequeueReusableCell(withIdentifier: TableViewCell.identifier, for: indexPath) as! TableViewCell
+            cell.configure(with: homeScreenViewModel.genreItems[indexPath.row].genreMovies, genreName: homeScreenViewModel.genreItems[indexPath.row].genre)// manual index of genre that you will make
+            return cell
         }
-        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

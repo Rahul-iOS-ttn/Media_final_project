@@ -48,7 +48,7 @@ class SignUpPageViewController: UIViewController, LoggableProtocol {
         dobPicker.datePickerMode = .date
         dobPicker.preferredDatePickerStyle = .wheels
         facebookLogin()
-        
+        googleLogin()
     }
     
     func facebookLogin() {
@@ -56,7 +56,7 @@ class SignUpPageViewController: UIViewController, LoggableProtocol {
             !token.isExpired {
             // User is logged in, do work such as go to next view controller.
             let token = token.tokenString
-            
+
             let request = FBSDKLoginKit.GraphRequest(graphPath: "me", parameters: ["fields": "id, email, first_name, last_name, picture, short_name,name, middle_name, name_format, age_range"], tokenString: token, version: nil, httpMethod: .get)
             request.start { (connection, result, error) in
                 print("\(String(describing: result))")
@@ -108,12 +108,13 @@ extension SignUpPageViewController: LoginButtonDelegate {
         let request = FBSDKLoginKit.GraphRequest(graphPath: "me", parameters: ["fields": "id, email, first_name, last_name, picture, short_name,name, middle_name, name_format, age_range"], tokenString: token, version: nil, httpMethod: .get)
         request.start { (connection, result, error) in
             print("\(String(describing: result))")
+            
+            UserDefaults.standard.set(true, forKey: "ISUSERLOGGEDIN")
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let MainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
+            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(MainTabBarController)// this in sign in page
         }
-        UserDefaults.standard.set(true, forKey: "ISUSERLOGGEDIN")
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let MainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
-        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(MainTabBarController)// this in sign in page
     }
     func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
         print("logout")
@@ -123,6 +124,12 @@ extension SignUpPageViewController: LoginButtonDelegate {
 extension SignUpPageViewController: GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         print("\(user.profile.email ?? "No email" )")
+        
+        UserDefaults.standard.set(true, forKey: "ISUSERLOGGEDIN")
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let MainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(MainTabBarController)// this in sign in page
     }
 }
 // MARK: - validation extension
@@ -150,12 +157,6 @@ extension SignUpPageViewController {
             } else {
                 
                 check = true
-                userData = [CoreDataHandler.shared.createUserDetails(firstName: firstNameTextfield!.text ?? "", lastName: lastNameTextfield!.text ?? "", username: userNameTextfield!.text ?? "", password: passwordTextfield!.text ?? "", email: emailTextField!.text ?? "", dob: dobPicker.date)]
-                
-                debugPrint(userData)
-                
-                let SignInPage = storyboard?.instantiateViewController(withIdentifier: "SignInPageViewController") as! SignInPageViewController
-                navigationController?.pushViewController(SignInPage, animated: true)
             }
         }else {
             check = false

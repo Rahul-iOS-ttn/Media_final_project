@@ -17,7 +17,7 @@ class TableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionView
     static let identifier = "TableViewCell"
     
     lazy var information = [movieData]()
-
+    
     static func nib() -> UINib {
         return UINib(nibName: "TableViewCell", bundle: nil)
     }
@@ -29,16 +29,16 @@ class TableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionView
         // Initialization code
         
         genreCollectionView.register(MainCollectionViewCell.nib(), forCellWithReuseIdentifier: MainCollectionViewCell.identifier )
-                
-                genreCollectionView.delegate = self
-                genreCollectionView.dataSource = self
-
+        
+        genreCollectionView.delegate = self
+        genreCollectionView.dataSource = self
+        
         
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-          return information.count
-      }
-      
+        return information.count
+    }
+    
     func configure(with information : [movieData],genreName: String){ //change this finction to take an array of strings which displays genres
         self.information = information
         genreLabel.text = genreName
@@ -46,9 +46,9 @@ class TableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-      let cell = genreCollectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell.identifier, for: indexPath) as! MainCollectionViewCell
-      cell.configure(with: information[indexPath.row])
-      return cell
+        let cell = genreCollectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell.identifier, for: indexPath) as! MainCollectionViewCell
+        cell.configure(with: information[indexPath.row])
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -56,14 +56,13 @@ class TableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-       
-        
-            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailScreenViewController") as! DetailScreenViewController
-//            vc.gotDetails = images[indexPath.item]
-            vc.navigationController?.pushViewController(vc, animated: true)
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailScreenViewController") as! DetailScreenViewController
+        vc.movieDetails = information[indexPath.item]
+
+        vc.navigationController?.pushViewController(vc, animated: true)
         
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state

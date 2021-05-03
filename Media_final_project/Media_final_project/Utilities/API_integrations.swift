@@ -66,6 +66,15 @@ class API_integrations {
         let homeURL: String = "https://api.themoviedb.org/3/"
         let api_key: String = "&api_key=820016b7116f872f5f27bf56f9fdfb66"
         switch genreCategory { // If a category fails to retrieve data then have it throw an error
+        case "Banner":
+            let banner: String = "trending/movie/day?"
+            let finalURL = URL(string: homeURL + banner + api_key)
+            
+            DispatchQueue.main.async {
+                self.downloadJSON(finalURL: finalURL) { (result) in
+                    downloadCaseCompleted(result)
+                }
+            }
         case "Popular":
             let popular: String = "discover/movie?sort_by=popularity.desc"
             let finalURL = URL(string: homeURL + popular + api_key)

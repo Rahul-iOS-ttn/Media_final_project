@@ -15,7 +15,7 @@ class HomeScreenViewModel {
     
     var constants = DataModelConstants()
     
-    var genreItems: [BindedData] = [BindedData(genre: "Popular", genreMovies: []),BindedData(genre: "Best Dramas", genreMovies: []),BindedData(genre: "Kids Movies", genreMovies: []),BindedData(genre: "Best Movies", genreMovies: []),
+    var genreItems: [BindedData] = [BindedData(genre: "Banner", genreMovies: []), BindedData(genre: "Popular", genreMovies: []),BindedData(genre: "Best Dramas", genreMovies: []),BindedData(genre: "Kids Movies", genreMovies: []),BindedData(genre: "Best Movies", genreMovies: []),
     ]
     
     func getInformation( allDone: @escaping (Bool, String) -> Void ) {

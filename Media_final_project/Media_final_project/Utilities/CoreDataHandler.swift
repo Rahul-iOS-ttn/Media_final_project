@@ -60,13 +60,13 @@ struct  CoreDataHandler {
     }
     
     
-    func fetchUserDetails(withUserName username: String) -> User? {
+    func fetchUserDetails(withEmail email: String) -> User? {
         
         let context = persistentContainer.viewContext
         
         let fetchRequest = NSFetchRequest<User>(entityName: "User")
         fetchRequest.fetchLimit = 1
-        fetchRequest.predicate = NSPredicate(format: "username == ^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$", username)
+        fetchRequest.predicate = NSPredicate(format: "email == %@", email)
         
         do {
             let details = try context.fetch(fetchRequest)
