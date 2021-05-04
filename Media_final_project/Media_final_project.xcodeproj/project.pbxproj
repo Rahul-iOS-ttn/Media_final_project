@@ -245,6 +245,7 @@
 		45DC5C3E262C5F710096B04A /* View controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4537B9E7263FAB00004C87AA /* SideMenu.swift */,
 				45CF808D26259C5F007AE717 /* LoginPageViewController.swift */,
 				450FF5E2262C3FDC000F1AA2 /* SignInPageViewController.swift */,
 				450FF5E4262C3FF2000F1AA2 /* SignUpPageViewController.swift */,
@@ -264,7 +265,6 @@
 				4570820B2631574F0053CE31 /* API_integrations.swift */,
 				458DA02B2639C2A2003F50BA /* DataModel.swift */,
 				458DA02F263E40EA003F50BA /* DesignComponents.swift */,
-				4537B9E7263FAB00004C87AA /* SideMenu.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";

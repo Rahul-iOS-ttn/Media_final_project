@@ -38,7 +38,7 @@
             <connections>
                 <outlet property="bannerCollectionView" destination="aTh-d5-TwW" id="wL4-zJ-7In"/>
             </connections>
-            <point key="canvasLocation" x="140.57971014492756" y="80.357142857142847"/>
+            <point key="canvasLocation" x="140.57971014492756" y="79.6875"/>
         </tableViewCell>
     </objects>
 </document>

@@ -15,21 +15,25 @@ class HomeScreenViewModel {
     
     var constants = DataModelConstants()
     
-    var genreItems: [BindedData] = [BindedData(genre: "Banner", genreMovies: []), BindedData(genre: "Popular", genreMovies: []),BindedData(genre: "Best Dramas", genreMovies: []),BindedData(genre: "Kids Movies", genreMovies: []),BindedData(genre: "Best Movies", genreMovies: []),
-    ]
+    var genres = ["Banner", "Popular", "Best Dramas", "Kids Movies", "Best Movies"]
+    
+    var genreItems: [BindedData] = []
     
     func getInformation( allDone: @escaping (Bool, String) -> Void ) {
-        for (index, genreItem) in genreItems.enumerated() { // result functions
+        genreItems.removeAll()
+        for genre in genres { // result functions
             
-            api.downloadCase(for: genreItem.genre) { (result) in
+            api.downloadCase(for: genre) { (result) in
                 switch result {
                 case .success(let instanceData):
-                    self.genreItems[index].genreMovies = instanceData
-                    if index == self.genreItems.count - 1 {
+                    if let data = instanceData{
+                        self.genreItems.append(BindedData(genre: genre, genreMovies: data))
                         allDone(true, "")
+                    } else {
+                        allDone(false, genre + " Data is empty")
                     }
                 case .failure(let error):
-                    print(error.localizedDescription)
+//                    print(error.localizedDescription) Always on controllers
                     allDone(false, error.localizedDescription)
                 }
             }

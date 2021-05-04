@@ -12,14 +12,6 @@ class MainCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var poster: UIImageView!
     
-    //    let id : String = "\(myObject.id)"
-    //    let urlString = "https://picsum.photos/200/300?image=" + id
-    //
-    //    let url = URL(string: urlString)!
-    //    myImageView.contentMode = .scaleAspectFill
-    //    myImageView.downloadedFrom(url: url)
-    
-    
     static let identifier = "MainCollectionViewCell"
     
     static func nib() -> UINib {
@@ -28,11 +20,11 @@ class MainCollectionViewCell: UICollectionViewCell {
     public func configure(with information : MovieData){
         
         let imageHomeURL = "https://image.tmdb.org/t/p/w500"
-        let urlString = imageHomeURL + (information.poster_path ?? "")
-        let url = URL(string: urlString)!
         
-        poster.contentMode = .scaleAspectFit
-        poster.downloadedFrom(url: url)
+        if let posterpath = information.poster_path ?? information.backdrop_path, let url = URL(string: imageHomeURL + posterpath){
+            poster.contentMode = .scaleAspectFit
+            poster.downloadedFrom(url: url)
+        }
     }
     
     override func awakeFromNib() {
@@ -40,6 +32,10 @@ class MainCollectionViewCell: UICollectionViewCell {
         // Initialization code
         poster.layer.cornerRadius = 10
         poster.clipsToBounds = true
+    }
+    
+    override func prepareForReuse() {
+        poster.image = nil
     }
     
 }

@@ -22,8 +22,6 @@ class TableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionView
         return UINib(nibName: "TableViewCell", bundle: nil)
     }
     
-    var api = API_integrations()
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -66,6 +64,10 @@ class TableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionView
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
+    }
+    
+    override func prepareForReuse() {
+        information.removeAll()
     }
     
 }

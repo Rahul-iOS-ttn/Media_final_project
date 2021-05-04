@@ -53,6 +53,7 @@ class HomeScreenViewController: UIViewController {
     
     @objc func getHomeScreenData() {
         homeScreenViewModel.getInformation { (dataFetchSuccess, error) in
+            self.refreshControl.endRefreshing()
             if dataFetchSuccess {
                 self.mainScreenTableView.reloadData()
             } else {
@@ -85,7 +86,12 @@ extension HomeScreenViewController: UITableViewDataSource, UITableViewDelegate, 
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200.0
+        if indexPath.row == 0 {
+            let width: CGFloat = mainScreenTableView.frame.width
+            return width*(9/16)
+        } else {
+            return 200.0
+        }
     }
     
     func didSelectMenuItem(menuOption: SideMenuItem) {

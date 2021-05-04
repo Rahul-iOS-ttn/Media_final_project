@@ -12,15 +12,19 @@ import UIKit
 extension UIImageView {
     func downloadedFrom(url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFill) {
         contentMode = mode
+        alpha = 0
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard
                 let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
                 let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
                 let data = data, error == nil,
                 let image = UIImage(data: data)
-                else { return }
+                else { return } //if you want to set a default image then set alpha 1 in main queue
             DispatchQueue.main.async() { [weak self] in
                 self?.image = image
+                UIView.animate(withDuration: 0.5) {
+                    self?.alpha = 1
+                }
             }
         }.resume()
     }
