@@ -16,6 +16,8 @@ class DetailScreenViewController: UIViewController {
     @IBOutlet weak var movieOverview: UILabel!
     
     var movieDetails = MovieData()
+    let constantDetail = DataModelConstants()
+    var genreNameData: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +32,10 @@ class DetailScreenViewController: UIViewController {
         
         backdropImage.downloadedFrom(url: url)
         // Do any additional setup after loading the view.
+        
+        movieDetails.genre_ids?.forEach({ (genre) in
+            self.genreNameData.append(constantDetail.genreName[genre] ?? "")
+        })
     }
 
 }

@@ -13,6 +13,8 @@ class BannerTableViewCell: UITableViewCell {
     var movieInfo = [MovieData]()
     
     static let identifier = "BannerTableViewCell"
+    weak var delegate: BannerViewCellProtocol?
+    var cellIndex: Int = 0
     
     weak var timer:Timer?
     
@@ -103,6 +105,10 @@ extension BannerTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
         cell.configure(movieInfo[indexPath.row])
         return cell
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.itemTapped(sectionIndex: cellIndex, itemIndex: indexPath.row)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

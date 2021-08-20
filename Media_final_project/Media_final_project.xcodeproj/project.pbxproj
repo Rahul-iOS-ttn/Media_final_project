@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4506D1CC26A84F6C00F6F7B6 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4506D1CB26A84F6C00F6F7B6 /* ShareViewController.swift */; };
+		4506D1CF26A84F6C00F6F7B6 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4506D1CD26A84F6C00F6F7B6 /* MainInterface.storyboard */; };
+		4506D1D326A84F6C00F6F7B6 /* testing share extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4506D1C926A84F6C00F6F7B6 /* testing share extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		450FF5E3262C3FDC000F1AA2 /* SignInPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450FF5E2262C3FDC000F1AA2 /* SignInPageViewController.swift */; };
 		450FF5E5262C3FF2000F1AA2 /* SignUpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450FF5E4262C3FF2000F1AA2 /* SignUpPageViewController.swift */; };
 		4537B9E8263FAB00004C87AA /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4537B9E7263FAB00004C87AA /* SideMenu.swift */; };
@@ -22,6 +25,7 @@
 		458DA038263E66A5003F50BA /* LoginExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458DA037263E66A5003F50BA /* LoginExtensions.swift */; };
 		458DA03A263E6712003F50BA /* NotifyingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458DA039263E6712003F50BA /* NotifyingExtensions.swift */; };
 		458DA03C263E67BB003F50BA /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458DA03B263E67BB003F50BA /* StringExtensions.swift */; };
+		459D2E4F2643F60900E62160 /* DetailScreenThemedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459D2E4E2643F60900E62160 /* DetailScreenThemedViewController.swift */; };
 		45BA166D2637F99F00430371 /* UserScreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BA166C2637F99F00430371 /* UserScreeViewController.swift */; };
 		45CF808A26259C5F007AE717 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF808926259C5F007AE717 /* AppDelegate.swift */; };
 		45CF808C26259C5F007AE717 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF808B26259C5F007AE717 /* SceneDelegate.swift */; };
@@ -52,6 +56,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4506D1D126A84F6C00F6F7B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45CF807E26259C5F007AE717 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4506D1C826A84F6C00F6F7B6;
+			remoteInfo = "testing share extension";
+		};
 		45CF80A026259C61007AE717 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 45CF807E26259C5F007AE717 /* Project object */;
@@ -68,9 +79,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4506D1D726A84F6C00F6F7B6 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				4506D1D326A84F6C00F6F7B6 /* testing share extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2EFEFA600B56DFBBFC1B76A4 /* Pods-Media_final_project-Media_final_projectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Media_final_project-Media_final_projectUITests.debug.xcconfig"; path = "Target Support Files/Pods-Media_final_project-Media_final_projectUITests/Pods-Media_final_project-Media_final_projectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3EF85C1073E93496CED76AAC /* Pods-Media_final_projectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Media_final_projectTests.release.xcconfig"; path = "Target Support Files/Pods-Media_final_projectTests/Pods-Media_final_projectTests.release.xcconfig"; sourceTree = "<group>"; };
+		4506D1C926A84F6C00F6F7B6 /* testing share extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "testing share extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4506D1CB26A84F6C00F6F7B6 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		4506D1CE26A84F6C00F6F7B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		4506D1D026A84F6C00F6F7B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		450FF5E2262C3FDC000F1AA2 /* SignInPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPageViewController.swift; sourceTree = "<group>"; };
 		450FF5E4262C3FF2000F1AA2 /* SignUpPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPageViewController.swift; sourceTree = "<group>"; };
 		4537B9E7263FAB00004C87AA /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
@@ -86,6 +115,7 @@
 		458DA037263E66A5003F50BA /* LoginExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginExtensions.swift; sourceTree = "<group>"; };
 		458DA039263E6712003F50BA /* NotifyingExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyingExtensions.swift; sourceTree = "<group>"; };
 		458DA03B263E67BB003F50BA /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		459D2E4E2643F60900E62160 /* DetailScreenThemedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenThemedViewController.swift; sourceTree = "<group>"; };
 		45BA166C2637F99F00430371 /* UserScreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserScreeViewController.swift; sourceTree = "<group>"; };
 		45CF808626259C5F007AE717 /* Media_final_project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Media_final_project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45CF808926259C5F007AE717 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +156,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4506D1C626A84F6C00F6F7B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		45CF808326259C5F007AE717 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -153,6 +190,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4506D1CA26A84F6C00F6F7B6 /* testing share extension */ = {
+			isa = PBXGroup;
+			children = (
+				4506D1CB26A84F6C00F6F7B6 /* ShareViewController.swift */,
+				4506D1CD26A84F6C00F6F7B6 /* MainInterface.storyboard */,
+				4506D1D026A84F6C00F6F7B6 /* Info.plist */,
+			);
+			path = "testing share extension";
+			sourceTree = "<group>";
+		};
 		4537B9E9263FDC8A004C87AA /* Theme */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +234,7 @@
 				45CF808826259C5F007AE717 /* Media_final_project */,
 				45CF80A226259C61007AE717 /* Media_final_projectTests */,
 				45CF80AD26259C61007AE717 /* Media_final_projectUITests */,
+				4506D1CA26A84F6C00F6F7B6 /* testing share extension */,
 				45CF808726259C5F007AE717 /* Products */,
 				4DA0911F2EAEFF87F77DF030 /* Pods */,
 				F7D274071D017EF5BD34A06B /* Frameworks */,
@@ -199,6 +247,7 @@
 				45CF808626259C5F007AE717 /* Media_final_project.app */,
 				45CF809F26259C61007AE717 /* Media_final_projectTests.xctest */,
 				45CF80AA26259C61007AE717 /* Media_final_projectUITests.xctest */,
+				4506D1C926A84F6C00F6F7B6 /* testing share extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -252,6 +301,7 @@
 				45F3CD0F263051FC00DDDDC7 /* HomeScreenViewController.swift */,
 				458DA02D263E3FA5003F50BA /* HomeScreenViewModel.swift */,
 				4570820D2634284D0053CE31 /* DetailScreenViewController.swift */,
+				459D2E4E2643F60900E62160 /* DetailScreenThemedViewController.swift */,
 				45BA166C2637F99F00430371 /* UserScreeViewController.swift */,
 				45D131E2263F3E410075AC35 /* SearchViewController.swift */,
 			);
@@ -312,6 +362,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4506D1C826A84F6C00F6F7B6 /* testing share extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4506D1D426A84F6C00F6F7B6 /* Build configuration list for PBXNativeTarget "testing share extension" */;
+			buildPhases = (
+				4506D1C526A84F6C00F6F7B6 /* Sources */,
+				4506D1C626A84F6C00F6F7B6 /* Frameworks */,
+				4506D1C726A84F6C00F6F7B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "testing share extension";
+			productName = "testing share extension";
+			productReference = 4506D1C926A84F6C00F6F7B6 /* testing share extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		45CF808526259C5F007AE717 /* Media_final_project */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45CF80B326259C61007AE717 /* Build configuration list for PBXNativeTarget "Media_final_project" */;
@@ -322,10 +389,12 @@
 				45CF808426259C5F007AE717 /* Resources */,
 				CF565D90AABBE4FC66110809 /* [CP] Embed Pods Frameworks */,
 				2195ED92B64F9EB49E1E31A6 /* [CP] Copy Pods Resources */,
+				4506D1D726A84F6C00F6F7B6 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4506D1D226A84F6C00F6F7B6 /* PBXTargetDependency */,
 			);
 			name = Media_final_project;
 			productName = Media_final_project;
@@ -382,6 +451,9 @@
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = TTN;
 				TargetAttributes = {
+					4506D1C826A84F6C00F6F7B6 = {
+						CreatedOnToolsVersion = 11.5;
+					};
 					45CF808526259C5F007AE717 = {
 						CreatedOnToolsVersion = 11.5;
 					};
@@ -411,11 +483,20 @@
 				45CF808526259C5F007AE717 /* Media_final_project */,
 				45CF809E26259C61007AE717 /* Media_final_projectTests */,
 				45CF80A926259C61007AE717 /* Media_final_projectUITests */,
+				4506D1C826A84F6C00F6F7B6 /* testing share extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4506D1C726A84F6C00F6F7B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4506D1CF26A84F6C00F6F7B6 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		45CF808426259C5F007AE717 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -586,6 +667,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4506D1C526A84F6C00F6F7B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4506D1CC26A84F6C00F6F7B6 /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		45CF808226259C5F007AE717 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -602,6 +691,7 @@
 				45F3CD1426306ABB00DDDDC7 /* TableViewCell.swift in Sources */,
 				45D131E6263F434C0075AC35 /* SearchTableViewCell.swift in Sources */,
 				458DA033263E64A0003F50BA /* UIElementExtensions.swift in Sources */,
+				459D2E4F2643F60900E62160 /* DetailScreenThemedViewController.swift in Sources */,
 				458DA02E263E3FA6003F50BA /* HomeScreenViewModel.swift in Sources */,
 				45DC5C41262C5FC80096B04A /* CoreDataHandler.swift in Sources */,
 				45CF809426259C60007AE717 /* Media_final_project.xcdatamodeld in Sources */,
@@ -640,6 +730,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4506D1D226A84F6C00F6F7B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4506D1C826A84F6C00F6F7B6 /* testing share extension */;
+			targetProxy = 4506D1D126A84F6C00F6F7B6 /* PBXContainerItemProxy */;
+		};
 		45CF80A126259C61007AE717 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 45CF808526259C5F007AE717 /* Media_final_project */;
@@ -653,6 +748,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		4506D1CD26A84F6C00F6F7B6 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4506D1CE26A84F6C00F6F7B6 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		45CF808F26259C5F007AE717 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -672,6 +775,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4506D1D526A84F6C00F6F7B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "testing share extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TTN.Media-final-project.testing-share-extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4506D1D626A84F6C00F6F7B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "testing share extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TTN.Media-final-project.testing-share-extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		45CF80B126259C61007AE717 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -790,6 +929,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 654381B937F83904ED01145C /* Pods-Media_final_project.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Media_final_project/Info.plist;
@@ -808,6 +948,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D3C3E0173C7E99A2573393DF /* Pods-Media_final_project.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Media_final_project/Info.plist;
@@ -909,6 +1050,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4506D1D426A84F6C00F6F7B6 /* Build configuration list for PBXNativeTarget "testing share extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4506D1D526A84F6C00F6F7B6 /* Debug */,
+				4506D1D626A84F6C00F6F7B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		45CF808126259C5F007AE717 /* Build configuration list for PBXProject "Media_final_project" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

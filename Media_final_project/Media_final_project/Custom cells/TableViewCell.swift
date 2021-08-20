@@ -8,12 +8,13 @@
 
 import UIKit
 
-class TableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
+class TableViewCell: UITableViewCell {
     
     @IBOutlet weak var genreCollectionView: UICollectionView!
     @IBOutlet weak var genreLabel: UILabel!
     
-    
+    weak var delegate: TableViewCellProtocol?
+    var cellIndex: Int = 0
     static let identifier = "TableViewCell"
     
     lazy var information = [MovieData]()
@@ -33,6 +34,15 @@ class TableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionView
         
         
     }
+    
+    override func prepareForReuse() {
+        information.removeAll()
+    }
+    
+}
+
+extension TableViewCell : UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return information.count
     }
@@ -54,20 +64,12 @@ class TableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailScreenViewController") as! DetailScreenViewController
-        vc.movieDetails = information[indexPath.item]
-
-        vc.navigationController?.pushViewController(vc, animated: true)
-        
+        delegate?.cellTapped(sectionIndex: cellIndex, cellIndex: indexPath.row)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
-    }
-    
-    override func prepareForReuse() {
-        information.removeAll()
     }
     
 }

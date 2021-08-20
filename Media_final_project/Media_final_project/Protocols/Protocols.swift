@@ -21,3 +21,14 @@ protocol ThemeProtocol {
     var background: UIColor { get }
     var tint: UIColor { get }
 }
+
+//MARK: - Collection and Table Delegate protocol
+
+/// Description - This method is used as for getting the cell index number and section number from the table view and then that data can be used for other tasks like initializing of a view controller using the data of cell
+protocol TableViewCellProtocol: AnyObject where Self: UITableViewDelegate {
+    func cellTapped(sectionIndex: Int, cellIndex: Int)
+}
+
+protocol BannerViewCellProtocol: AnyObject where Self: UITableViewDelegate {
+    func itemTapped(sectionIndex: Int, itemIndex: Int)
+}

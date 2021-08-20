@@ -61,6 +61,14 @@ class HomeScreenViewController: UIViewController {
             }
         }
     }
+    
+    func openDetailScreen(_ sectionIndex: Int, _ itemIndex: Int) {
+//        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailScreenViewController") as! DetailScreenViewController
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailScreenThemedViewController") as! DetailScreenThemedViewController
+        vc.movieDetails = homeScreenViewModel.genreItems[sectionIndex].genreMovies[itemIndex]
+
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     @IBAction func didTapMenuButton(){
         present(sideMenu!, animated: true)
     }
@@ -76,10 +84,14 @@ extension HomeScreenViewController: UITableViewDataSource, UITableViewDelegate, 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = mainScreenTableView.dequeueReusableCell(withIdentifier: BannerTableViewCell.identifier, for: indexPath) as! BannerTableViewCell
+            cell.cellIndex = indexPath.row
+            cell.delegate = self
             cell.configure(homeScreenViewModel.genreItems[indexPath.row])
             return cell
         } else {
             let cell = mainScreenTableView.dequeueReusableCell(withIdentifier: TableViewCell.identifier, for: indexPath) as! TableViewCell
+            cell.cellIndex = indexPath.row
+            cell.delegate = self
             cell.configure(with: homeScreenViewModel.genreItems[indexPath.row].genreMovies, genreName: homeScreenViewModel.genreItems[indexPath.row].genre)// manual index of genre that you will make
             return cell
         }
@@ -123,5 +135,15 @@ extension HomeScreenViewController: UITableViewDataSource, UITableViewDelegate, 
             openAlert(title: "Alert", message: "Logout Tapped", alertStyle: .alert, actionTitles: ["Okay"], actionStyles: [.default], actions: [{_ in }])
         }
         
+    }
+}
+
+extension HomeScreenViewController: BannerViewCellProtocol, TableViewCellProtocol {
+    func itemTapped(sectionIndex: Int, itemIndex: Int) {
+        openDetailScreen(sectionIndex, itemIndex)
+    }
+    
+    func cellTapped(sectionIndex: Int, cellIndex: Int) {
+        openDetailScreen(sectionIndex, cellIndex)
     }
 }
